@@ -1,17 +1,25 @@
-node_modules/
-.expo/
-dist/
-npm-debug.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-*.orig.*
-web-build/
+BuyBuzz/node_modules/
+BuyBuzz/.expo/
+BuyBuzz/dist/
+BuyBuzz/npm-debug.*
+BuyBuzz/*.jks
+BuyBuzz/*.p8
+BuyBuzz/*.p12
+BuyBuzz/*.key
+BuyBuzz/*.mobileprovision
+BuyBuzz/*.orig.*
+BuyBuzz/web-build/
 
 # macOS
-.DS_Store
+BuyBuzz/.DS_Store
+
 
 # Temporary files created by Metro to check the health of the file watcher
-.metro-health-check*
+BuyBuzz/.metro-health-check*
+
+
+#RecommendApi Files
+/__pycache__
+/Dataset
+/Model
+/ModelData
