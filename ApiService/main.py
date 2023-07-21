@@ -8,67 +8,46 @@ import json
 from concurrent.futures import ThreadPoolExecutor
 
 from Functions.dataTransform import transformData
+from Views import getAllProducts,getProductsGroup,getProductById,getSimilarProductsDetails
 
 graph = Graph()
 g = graph.traversal().withRemote(DriverRemoteConnection('ws://localhost:8182/gremlin','g'))
 app = FastAPI()
 
 
-def get_all_products():
-    query_result = g.V().hasLabel('Product').valueMap(True).toList()
-    return query_result
 
-def fetch_products():
-    # Run the Gremlin query in a separate thread using ThreadPoolExecutor
-    with ThreadPoolExecutor() as executor:
-        products = executor.submit(get_all_products).result()
-    return products
-
-
+"""Get All"""
 @app.get("/")
 async def root():
-    products = await asyncio.to_thread(fetch_products)
-    return {"Products":products}
+    products = await asyncio.to_thread(getAllProducts,g)
+    res=[]
+    for prod in products:
+        res.append(transformData(prod))
+    return {"Products":res}
 
-
-
-def get_products_by_group(group):
-    # Execute the Gremlin query to fetch products by group
-    query_result = g.V().hasLabel('Product').has('group', group).valueMap(True).toList()
-    return query_result
-
+"""Get by Group"""
 @app.get("/products/{group}")
 async def get_products(group: str):
     # Start the asynchronous task to fetch products by group
-    products = await asyncio.to_thread(get_products_by_group, group)
-    return {"Products": products}
+    products = await asyncio.to_thread(getProductsGroup,g,group)
+    res=[]
+    for prod in products:
+        res.append(transformData(prod))
+    return {group: res}
 
-
-def get_products_by_id(item_id):
-    # Execute the Gremlin query to fetch products by ID number
-    query_result = g.V().hasLabel('Product').has('Id', item_id).valueMap(True).toList()
-    return transformData(query_result[0])
-    #return query_result[0]
-
+"""Get by Id"""
 @app.get("/{productId}")
 async def getProductDetails(productId:int):
-    product = await asyncio.to_thread(get_products_by_id, productId)
+    product = await asyncio.to_thread(getProductById, g,productId)
     return {"Product":product}
 
 
-
-def get_similar_products(productId):
-    # Execute the Gremlin query to fetch products by ID number
-    query_result = g.V().hasLabel('Product').has('Id', productId).values("similar").toList()
-    return query_result
-
-
+"""Get Similar Products"""
 @app.get("/similar/{productId}")
 async def getSimilarProducts(productId:int):
-    product = await asyncio.to_thread(get_similar_products, productId)
-    data=json.loads(product[0])
-    data=[int(value) for value in data]
-    return {"Similar Products":data}
+    product = await asyncio.to_thread(getSimilarProductsDetails,g, productId)
+    return {"Similar Products":product}
+
 
 
 
