@@ -10,20 +10,25 @@ import {
   Dimensions,
   Animated,
   ToastAndroid,
+  StyleSheet
 } from "react-native";
 import Entypo from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import SampleData from "../../database/SampleData.json";
+import CarouselComponent from '../Components/carousel';
+import GridComponent from "../Components/grid";
+import Star from "../Components/star";
 
 const ProductInfo = ({ route, navigation }) => {
   //const {productID} = route.params;
   //const [product, setProduct] = useState({});
 
+  
   const width = Dimensions.get("window").width;
 
   const scrollX = new Animated.Value(0);
 
   let position = Animated.divide(scrollX, width);
+  
 
   useEffect(() => {
     const unsubscribe = navigation.addListener("focus", () => {});
@@ -32,6 +37,28 @@ const ProductInfo = ({ route, navigation }) => {
   }, [navigation]);
 
   //add to cart
+
+  const renderGrid = () => {
+    const boxData = [
+      { id: 1, title: 'Box 1' },
+      { id: 2, title: 'Box 2' },
+      { id: 3, title: 'Box 3' },
+      { id: 4, title: 'Box 4' },
+      { id: 5, title: 'Box 5' },
+      { id: 6, title: 'Box 6' },
+  
+    ];
+
+
+    return boxData.map((box) => (
+      <GridComponent
+        key={box.id}
+        title={box.title}
+        onPress={() => handleBoxPress(box.id)}
+      />
+    ));
+  };
+  
 
   const addToCart = async (id) => {
     let itemArray = await AsyncStorage.getItem("cartItems");
@@ -66,6 +93,42 @@ const ProductInfo = ({ route, navigation }) => {
     }
   };
 
+  const PercentageBar = ({ starText, percentage }) => {
+    const [animation] = useState(new Animated.Value(0));
+    useEffect(() => {
+      Animated.timing(animation, {
+        toValue: percentage,
+        duration: 500,
+      }).start();
+    }, [percentage]);
+  
+    return (
+      <View
+        style={{
+          flexDirection: "row",
+        }}
+      >
+        <Text style={styles.progressText}>{starText}</Text>
+        <View style={styles.progressMiddle}>
+          <View style={styles.progressWrap}>
+            <Animated.View
+              style={[
+                styles.progressBar,
+                {
+                  width: animation.interpolate({
+                    inputRange: [0, 100],
+                    outputRange: ["0%", "100%"],
+                  }),
+                },
+              ]}
+            />
+          </View>
+        </View>
+        <Text style={styles.progressPercentText}>{percentage}%</Text>
+      </View>
+    );
+  };
+
   //product horizontal scroll product card
   const renderProduct = ({ item, index }) => {
     return (
@@ -78,7 +141,7 @@ const ProductInfo = ({ route, navigation }) => {
         }}
       >
         <Image
-          source={item}
+          source="assets/Images/Books/ToKillAMockingbird.jpg"
           style={{
             width: "100%",
             height: "100%",
@@ -156,7 +219,7 @@ const ProductInfo = ({ route, navigation }) => {
             paddingHorizontal: 16,
             marginTop: 6,
           }}
-        >
+        ></View>
           <View
             style={{
               flexDirection: "row",
@@ -165,7 +228,7 @@ const ProductInfo = ({ route, navigation }) => {
             }}
           >
             <Entypo
-              name="music"
+              name="book"
               style={{
                 fontSize: 18,
                 color: "green",
@@ -201,6 +264,7 @@ const ProductInfo = ({ route, navigation }) => {
             >
               <Text>Harry Potter and the Prisoner of the Azkaban </Text>
             </Text>
+            
             <Ionicons
               name="share-outline"
               style={{
@@ -221,8 +285,9 @@ const ProductInfo = ({ route, navigation }) => {
               opacity: 0.5,
               lineHeight: 20,
               maxWidth: "85%",
-              maxHeight: 44,
+              maxHeight: 43,
               marginBottom: 18,
+              
             }}
           >
             {" "}
@@ -243,7 +308,7 @@ const ProductInfo = ({ route, navigation }) => {
               marginVertical: 20,
               borderBottomColor: "#F0F0F3",
               borderBottomWidth: 1,
-              paddingBottom: 20,
+              paddingBottom: 10
             }}
           >
             <View
@@ -284,7 +349,7 @@ const ProductInfo = ({ route, navigation }) => {
           </View>
           <View
             style={{
-              paddingHorizontal: 16,
+              paddingHorizontal: 10,
             }}
           >
             <Text
@@ -294,15 +359,151 @@ const ProductInfo = ({ route, navigation }) => {
                 maxWidth: "85%",
                 color: "#000000",
                 marginBottom: 4,
+                
               }}
             >
-              {" "}
             </Text>
-            <Text>Price $20</Text>
+            <Text
+            style={{
+              fontSize: 20,
+                fontWeight: "500",
+                maxWidth: "85%",
+                color: "#000000",
+                marginBottom: 4,
+            }}>Price $20</Text>
             <Text>Tax Rate 2%</Text>
           </View>
+          <Text
+          style={{
+            fontSize: 20,
+            
+                fontWeight: "500",
+                maxWidth: "85%",
+                color: "#000000",
+                marginBottom: 40,
+                top:20,
+            
+          }}>You might also like</Text>
+          <View style={styles.container}> 
+            <CarouselComponent />
+          </View>
+         
+          <Text
+          style={{
+            fontSize: 20,
+            
+                fontWeight: "500",
+                maxWidth: "85%",
+                color: "#000000",
+                marginBottom: 40,
+                top:25,
+            
+          }}>More like Harry Potter</Text>
+          <View style={styles.container}>
+            <View style={styles.row}>
+              <View style={styles.box} />
+              <View style={styles.textContainer}>
+                <Text style={styles.boxText}></Text>
+              </View>
+              
+       
+              
+              
+              <View style={styles.box} />
+              <View style={styles.box} />
+            </View>
+            <View style={styles.row}>
+              <View style={styles.box} />
+              <View style={styles.textContainer}>
+                <Text style={styles.boxText}></Text>
+              </View>
+              
+       
+              
+              
+              <View style={styles.box} />
+              <View style={styles.box} />
+            </View>
+
+          </View>
+          <View style={{
+            flex: 1,
+            backgroundColor: "#F5F8FF",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
+      <View style={{
+        backgroundColor: "#FFFFFF",
+        borderRadius: 10,
+        paddingHorizontal: 30,
+        paddingVertical: 40,
+        minWidth: "80%",
+        shadowOffset: { width: 0, height: 5 },
+        shadowOpacity: 1.0,
+        shadowRadius: 2,
+        shadowColor: "rgba(193, 211, 251, 0.5)",
+        elevation: 5,
+      }}>
+        <Text style={{
+          fontWeight: "bold",
+          fontSize: 20,
+          color: "#323357",
+          textAlign: "center",
+        }}>Customer reviews
+        </Text>
+        <View style={{
+          marginTop: 20,
+          marginBottom: 5,
+          backgroundColor: "#F5F8FF",
+          borderRadius: 40,
+          alignItems: "center",
+          justifyContent: "space-between",
+          flexDirection: "row",
+          paddingHorizontal: 15,
+          paddingVertical: 10,
+        }}>
+          <View
+           style={{
+           flexDirection: "row",
+           }}
+          >
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+        </View>
+        <Text>4.7 out of 5</Text>
+        
+
+
+
+
+        </View>
+        <Text style={{
+          fontSize: 16,
+          color: "#595B71",
+          textAlign: "center",
+      
+        }}>40 customer ratings</Text>
+
+      </View>
+    
+      
+
+      
+      
+
+  
+          
+
+          
+          
+     
+    
         </View>
       </ScrollView>
+      
 
       <View
         style={{
@@ -339,7 +540,46 @@ const ProductInfo = ({ route, navigation }) => {
         </TouchableOpacity>
       </View>
     </View>
+  
   );
 };
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  row: {
+    flexDirection: 'row',
+  },
+  box: {
+    width: 100,
+    height: 100,
+    margin: 8,
+    left:2,
+    backgroundColor: '#ccc',},
+    textContainer: {
+      alignItems: 'center',
+    },
+    boxText: {
+      textAlign: 'center',
+      marginTop: 4,
+      fontSize: 16,
+      fontWeight: 'bold',
+    },
+  
+    
+
+
+    
+},
+);
 
 export default ProductInfo;
