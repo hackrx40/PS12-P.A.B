@@ -11,6 +11,8 @@ import {
 } from "react-native";
 import { COLOURS, Items } from "../../database/Database";
 import { AntDesign } from "@expo/vector-icons";
+import sampleData from "../../database/SampleData.json";
+const productImage = require("../Assets/images/Book.png");
 
 const Home = ({ navigation }) => {
   const [products, setProducts] = useState([]);

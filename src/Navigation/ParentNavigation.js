@@ -9,9 +9,9 @@ const Stack = createNativeStackNavigator();
 const ParentNavigation = () => {
   return (
     <Stack.Navigator>
-      {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
+      <Stack.Screen name="Home" component={HomeScreen} />
       {/* <Stack.Screen name="Cart" component={MyCart} /> */}
-      <Stack.Screen name="Product Info" component={ProductInfo} />
+      {/* <Stack.Screen name="Product Info" component={ProductInfo} /> */}
     </Stack.Navigator>
   );
 };
