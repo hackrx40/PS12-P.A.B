@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     fontSize:20,
     fontWeight:"600",
     paddingLeft:20,
+ 
   },
   descText:{
     padding:20,
@@ -89,5 +90,4 @@ const styles = StyleSheet.create({
   },
 })
 
-
-export default styles
+export default styles;

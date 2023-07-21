@@ -1,33 +1,24 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  StatusBar,
-  SafeAreaView,
-  TouchableOpacity,
-  Touchable,
-  ActivityIndicator,
-} from "react-native";
-import React, { useEffect } from "react";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { FontAwesome, Ionicons, AntDesign } from "@expo/vector-icons";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import styles from "../Styles/Product.Styles";
-import Star from "../Components/star";
-import ProductItem from "../Components/Cards/ProductItem";
-import LongItem from "../Components/Cards/LongItem";
-import CarouselComponent from "../Components/Cards/Carousel";
+import { ScrollView, StyleSheet, Text, View,StatusBar, SafeAreaView, TouchableOpacity, Touchable,ActivityIndicator } from 'react-native'
+import React,{useEffect} from 'react'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { FontAwesome ,Ionicons,AntDesign} from '@expo/vector-icons';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import styles from '../Styles/Product.Styles'
+import Star from '../Components/star';
+import ProductItem from '../Components/Cards/ProductItem';
+import LongItem from '../Components/Cards/LongItem';
+
+
 
 const ProductScreen = () => {
   useEffect(() => {
     Ionicons.loadFont();
     FontAwesome.loadFont();
     AntDesign.loadFont();
-  }, []);
-  const productId = 45;
-  const { isLoading, error, data } = useQuery(["posts"], async () => {
+  }, [])
+  const productId=45
+  const { isLoading, error, data } = useQuery(['posts'], async () => {
     const response = await axios.get(`http://127.0.0.1:8000/${productId}`);
     return response.data;
   });
@@ -46,7 +37,6 @@ const ProductScreen = () => {
       </View>
     );
   }
-  console.log(data);
   return (
     <KeyboardAwareScrollView
       resetScrollToCoords={{ x: 0, y: 0 }}
@@ -63,14 +53,18 @@ const ProductScreen = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.productTopContainer}>
-          <View style={styles.sampleImage} />
-          <Text style={styles.productName}>Harry Potter</Text>
-
-          {/* <Text style={styles.productName}>{data["Product"]["title"]}</Text> */}
+          <View style={styles.sampleImage}/>
+          <Text style={styles.productName}>{data["Product"]["title"]}</Text>
           <Text style={styles.companyName}>John Doe Corporation</Text>
+          <TouchableOpacity>
+            <FontAwesome name="chart-line" size={24} color="greeb"/>
+          </TouchableOpacity>
+            
           <Text style={styles.stars}>{"⭐️⭐️⭐️"}</Text>
         </View>
+        <Text style= {styles.descText}>ASIN:</Text> 
         <Text style={styles.heading}>Description</Text>
+       
         <Text style={styles.descText}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

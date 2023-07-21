@@ -21,6 +21,7 @@ function App() {
         <Stack.Screen name="CategoryScreen" component={CategoryScreen} />
         <Stack.Screen name='CartScreen' component={CartScreen}/>
         <Stack.Screen name='HomeScreen' component={HomeScreen}/>
+        <Stack.Screen name='ProfileScreen' component={ProfileScreen}/>
       </Stack.Navigator>
   );
 }
