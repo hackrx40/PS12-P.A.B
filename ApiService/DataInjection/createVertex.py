@@ -29,8 +29,6 @@ g = traversal().withRemote(connection)
 
 
 def create_vertex_from_product(g, product_data):
-    #Creating and Commiting Vertex Index
-
     # Serialize the reviews dictionary to a JSON string
     if "reviews" in product_data:
         product_data["reviews"] = json.dumps(product_data["reviews"])
