@@ -14,6 +14,19 @@ BuyBuzz/web-build/
 BuyBuzz/.DS_Store
 
 
+Bucks/node_modules/
+Bucks/.expo/
+Bucks/dist/
+Bucks/npm-debug.*
+Bucks/*.jks
+Bucks/*.p8
+Bucks/*.p12
+Bucks/*.key
+Bucks/*.mobileprovision
+Bucks/*.orig.*
+Bucks/web-build/
+
+
 # Temporary files created by Metro to check the health of the file watcher
 BuyBuzz/.metro-health-check*
 
