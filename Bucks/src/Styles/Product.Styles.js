@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     width:40,
     height:40,
     borderRadius:40,
-    backgroundColor:'lightgrey',
+    backgroundColor:'white',
     alignItems:"center",
     justifyContent:"center"
   },
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     width:40,
     height:40,
     borderRadius:40,
-    backgroundColor:'lightgrey',
+    backgroundColor:'white',
     alignItems:"center",
     justifyContent:"center"
   },
@@ -70,7 +70,21 @@ const styles = StyleSheet.create({
   },
   reviewBox:{
     justifyContent: "center",
+    top:20,
     alignItems: "center",
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  row: {
+    flexDirection: 'row',
+    top:20,
   }
 })
 
