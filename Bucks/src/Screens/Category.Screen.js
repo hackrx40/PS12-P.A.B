@@ -21,7 +21,7 @@ const CategoryScreen = () => {
         <StatusBar/>
         <View style={styles.topSection}>
           <TouchableOpacity style={styles.backButton}>
-            <Ionicons name="location" size={24} color="red" />
+            <Ionicons name="arrow-back" size={24} color="red" />
           </TouchableOpacity>
           <TouchableOpacity style={styles.searchButton}>
             <FontAwesome name="user" size={24} color="black"/>

@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
       <Stack.Navigator
-        initialRouteName="CartScreen"
+        initialRouteName="CategoryScreen"
         screenOptions={{
           headerShown:false
         }}
