@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     justifyContent:"flex-start",
     paddingVertical:8,
     borderRadius:8,
+    height:100
   },
   addressName:{
     fontSize:16,
@@ -87,8 +88,14 @@ const styles = StyleSheet.create({
     marginVertical:2,
   },
   leftText:{
-    fontWeight:"800",
-  }
+    fontWeight:"500",
+    fontSize:16,
+  },
+  total:{
+    fontSize:24,
+    fontWeight:"800"
+
+  },
 })
 
 
