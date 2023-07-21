@@ -34,7 +34,7 @@ const ProductItem = () => {
         {/* <Text style={styles.body}>{productItem.Group}</Text> */}
         <View style={styles.starsContainer}>
           <MaterialIcons name="star" size={18} color="gold" />
-          {/* <Text style={styles.starsText}>{numStars}</Text> */}
+          <Text style={styles.starsText}> ₹ 999</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   starsText: {
     fontSize: 12,
-    marginLeft: 3,
+    marginLeft: 10,
   },
 });
 
