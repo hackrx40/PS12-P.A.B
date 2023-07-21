@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     alignItems:"center",
     flexDirection:"row",
   },
+
   backButton:{
     width:40,
     height:40,

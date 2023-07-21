@@ -10,14 +10,22 @@ const styles = StyleSheet.create({
     alignItems:"center",
     flexDirection:"row",
     position:"absolute",
-    top:50,
+    top:60,
     zIndex:300,
   },
+  Image:{
+    width: 200, 
+    height: 200, 
+    resizeMode: 'cover',
+    borderRadius: 10, 
+
+  },
+
   backButton:{
     width:40,
     height:40,
     borderRadius:40,
-    backgroundColor:'lightgrey',
+    backgroundColor:'white',
     alignItems:"center",
     justifyContent:"center"
   },
@@ -25,9 +33,22 @@ const styles = StyleSheet.create({
     width:40,
     height:40,
     borderRadius:40,
-    backgroundColor:'lightgrey',
+    backgroundColor:'white',
     alignItems:"center",
     justifyContent:"center"
+  },
+  row: {
+    flexDirection: 'row',
+    top:20,
+  },
+  backgroundImage:{
+    
+    
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   categoryHolder:{
     backgroundColor:"red",
@@ -41,7 +62,8 @@ const styles = StyleSheet.create({
     fontWeight:"600",
     fontStyle:"italic",
     textAlign:"center",
-    top:"40%",
+    
+    top:"70%",
   },
   listHeading:{
     marginTop:0,
