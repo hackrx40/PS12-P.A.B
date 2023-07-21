@@ -62,10 +62,10 @@ const ProductScreen = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </Text>
         <Text style={styles.heading}>You Might Also Like</Text>
-        <View style={{textAlign:"center"}}>   
+        <View style={{textAlign:"center"}}>
         <View>
           <LongItem>
-            
+
           </LongItem>
         </View>
         </View>
@@ -87,13 +87,13 @@ const ProductScreen = () => {
             <ProductItem></ProductItem>
             <ProductItem></ProductItem>
           </View>
-            
+
         </View>
-        
-        
-        
+
+
+
         <View style={styles.reviewBox}>
-         
+
           <View style={{
         backgroundColor: "#FFFFFF",
         borderRadius: 10,
@@ -141,7 +141,7 @@ const ProductScreen = () => {
           fontSize: 16,
           color: "#595B71",
           textAlign: "center",
-      
+
         }}>40 customer ratings</Text>
 
       </View>
