@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     width:40,
     height:40,
     borderRadius:40,
-    backgroundColor:'lightgrey',
+    backgroundColor:'white',
     alignItems:"center",
     justifyContent:"center"
   },
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     width:40,
     height:40,
     borderRadius:40,
-    backgroundColor:'lightgrey',
+    backgroundColor:'white',
     alignItems:"center",
     justifyContent:"center"
   },
@@ -70,8 +70,13 @@ const styles = StyleSheet.create({
   },
   reviewBox:{
     justifyContent: "center",
+    top:20,
     alignItems: "center",
-  }
+  },
+  row: {
+    flexDirection: 'row',
+    top:20,
+  },
 })
 
 

@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View,StatusBar, SafeAreaView, TouchableOpacity, Touchable } from 'react-native'
+import {   ScrollView, StyleSheet, Text, View,StatusBar, SafeAreaView, TouchableOpacity, Touchable } from 'react-native'
 import React,{useEffect} from 'react'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Feather,Ionicons,FontAwesome5} from '@expo/vector-icons';
@@ -40,32 +40,30 @@ const CartScreen = () => {
         </View>
         <View style={{marginTop:20,textAlign:"center"}}>
           <View style={styles.userBox}>
+            
             <View style={styles.billRow}/>
+            
               <Text style={{
             left:50,
             bottom:25,
             fontSize:18,
             fontWeight:"600",
            }}>Title</Text>
-         
+           <Text style={{
+            left:15
+           }}>Description
+          </Text>        
             <Text style={{
-            left: 15,
+            left: 150,
+            fontSize:20,
+            fontWeight:"400",
            }}>
-            Description
-           </Text>
-          <TouchableOpacity>
-            <View>
-              
-            </View>
-            
-          </TouchableOpacity>
+            $400
+           </Text>      
+          </View> 
+        </View>
            
 
-
-            
-            
-          </View>
-        </View>
         <Text style={styles.billDetails}>Bill Details</Text>
         <View style={styles.billBox}>
           <View style={styles.billRow}>
@@ -81,7 +79,7 @@ const CartScreen = () => {
             <Text style={[styles.total,{color:"orange"}]}>$ 300</Text>
           </View>
         </View>
-        <Text>Affaan Component Goes Here</Text>
+        <Text>Affaan Component Goes Here (slider to pay)</Text>
       </SafeAreaView>
     </KeyboardAwareScrollView>
   )
