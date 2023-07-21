@@ -4,73 +4,66 @@ const height=Dimensions.get("window").height
 const width=Dimensions.get("window").width
 const styles = StyleSheet.create({
   topSection:{
-    width:"100%",
-    paddingHorizontal:20,
+    flexDirection:"row",
     justifyContent:"space-between",
     alignItems:"center",
-    flexDirection:"row",
-    position:"absolute",
-    top:50,
-    zIndex:300,
+    paddingHorizontal:20,
+    marginBottom:16,
   },
-  backButton:{
-    width:40,
-    height:40,
-    borderRadius:40,
-    backgroundColor:'lightgrey',
-    alignItems:"center",
-    justifyContent:"center"
-  },
-  searchButton:{
-    width:40,
-    height:40,
-    borderRadius:40,
-    backgroundColor:'lightgrey',
-    alignItems:"center",
-    justifyContent:"center"
-  },
-  productTopContainer:{
-    margin:10,
-    marginTop:-10,
-    backgroundColor:"lightgreen",
-    height:height*.5,
-    alignItems:"center",
-    borderRadius:8,
-  },
-  sampleImage:{
-    height:height*.3,
-    width:width*.5,
-    backgroundColor:"darkgreen",
-    marginTop:"10%",
-    borderRadius:16,
-  },
-  productName:{
+  heading:{
     fontSize:24,
     fontWeight:"600",
     textAlign:"center",
-    marginTop:8,
   },
-  companyName:{
-    fontSize:20,
+  dataContainer:{
+    flexDirection:"row",
+    justifyContent:"space-evenly",
+    alignItems:"center",
+    paddingHorizontal:10,
+    marginVertical:80,
+  },
+  imageStyle:{
+    height:120,
+    width:120,
+    borderRadius:120,
+  },
+  username:{
+    fontSize:24,
+    fontWeight:"600",
+    marginVertical:4,
+  },
+  email:{
+    fontSize:16,
+    marginVertical:4,
     fontWeight:"400",
-    marginTop:4,
   },
-  stars:{
-    marginTop:8,
+  accountOverview:{
+    width:width,
+    backgroundColor:"lightgrey",
+    borderTopStartRadius:48,
+    borderTopEndRadius:48,
   },
-  heading:{
+  overviewHeading:{
+    marginTop:20,
+    marginLeft:20,
     fontSize:20,
     fontWeight:"600",
-    paddingLeft:20,
   },
-  descText:{
-    padding:20,
-    paddingVertical:10,
-    letterSpacing:.5,
+  optionRow:{
+    flexDirection:"row",
+    paddingHorizontal:24,
+    justifyContent:"space-between",
+    paddingVertical:16,
   },
-  reviewBox:{
-    justifyContent: "center",
-    alignItems: "center",
+  rowLeftGroup:{
+    flexDirection:"row",
+    justifyContent:"center",
+    alignItems:"center",
+  },
+  text:{
+    fontSize:20,
+    fontWeight:"600",
+    marginLeft:16,
   }
 })
 
