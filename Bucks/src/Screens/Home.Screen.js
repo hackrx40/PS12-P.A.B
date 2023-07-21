@@ -1,54 +1,65 @@
-import { ScrollView, StyleSheet, Text, View,StatusBar, SafeAreaView, TouchableOpacity, Touchable } from 'react-native'
-import React,{useEffect} from 'react'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { FontAwesome ,Ionicons,AntDesign} from '@expo/vector-icons';
-import styles from '../Styles/Home.Styles'
-import HomeSearch from "../Components/Input/HomeSearch"
-import HomeOption from "../Components/Buttons/HomeOptions"
-import SnapCarousel from "../Components/Carousel/CompanyCarousel"
-import ProductItem from '../Components/Cards/ProductItem';
-
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  StatusBar,
+  SafeAreaView,
+  TouchableOpacity,
+  Touchable,
+} from "react-native";
+import React, { useEffect } from "react";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { FontAwesome, Ionicons, AntDesign } from "@expo/vector-icons";
+import styles from "../Styles/Home.Styles";
+import HomeSearch from "../Components/Input/HomeSearch";
+import HomeOption from "../Components/Buttons/HomeOptions";
+import SnapCarousel from "../Components/Carousel/CompanyCarousel";
+import ProductItem from "../Components/Cards/ProductItem";
+import SearchBar from "../Components/Buttons/SearchBar";
 
 const HomeScreen = () => {
   useEffect(() => {
     Ionicons.loadFont();
     FontAwesome.loadFont();
     AntDesign.loadFont();
-  }, [])
+  }, []);
 
   return (
     <KeyboardAwareScrollView
       resetScrollToCoords={{ x: 0, y: 0 }}
       scrollEnabled={true}
-      contentContainerStyle={{marginHorizontal:10}}
+      contentContainerStyle={{ marginHorizontal: 10 }}
     >
-      <SafeAreaView style={{flex:1}}>
-        <StatusBar/>
+      <SafeAreaView style={{ flex: 1 }}>
+        <StatusBar />
         <View style={styles.topBar}>
           <Text style={styles.salutation}>Good Morning Parth</Text>
           <View style={styles.rightGroup}>
             <TouchableOpacity>
               <AntDesign
-              name="heart" size={24} color="black"
-              style={{marginRight:16,}}
+                name="heart"
+                size={24}
+                color="black"
+                style={{ marginRight: 16 }}
               />
             </TouchableOpacity>
             <TouchableOpacity>
-              <FontAwesome
-              name="bell" size={24} color="black" />
+              <FontAwesome name="bell" size={24} color="black" />
             </TouchableOpacity>
           </View>
         </View>
-        <HomeSearch/>
+        {/* <HomeSearch/> */}
+        <SearchBar />
         <View style={styles.optionContainer}>
-          <HomeOption/>
-          <HomeOption/>
-          <HomeOption/>
+          <HomeOption />
+          <HomeOption />
+          <HomeOption />
         </View>
         <View style={styles.optionContainer}>
-          <HomeOption/>
-          <HomeOption/>
-          <HomeOption/>
+          <HomeOption />
+          <HomeOption />
+          <HomeOption />
         </View>
         <View style={styles.topContainer}>
           <Text style={styles.heading}>Discover Top Categories</Text>
@@ -56,7 +67,7 @@ const HomeScreen = () => {
             <Text style={styles.seeAll}>See All</Text>
           </TouchableOpacity>
         </View>
-        <SnapCarousel/>
+        <SnapCarousel />
         <View style={styles.topContainer}>
           <Text style={styles.heading}>Products just for you</Text>
           <TouchableOpacity>
@@ -80,11 +91,10 @@ const HomeScreen = () => {
             <ProductItem></ProductItem>
             <ProductItem></ProductItem>
           </View>
-
         </View>
       </SafeAreaView>
     </KeyboardAwareScrollView>
-  )
-}
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;
