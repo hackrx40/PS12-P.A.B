@@ -12,7 +12,11 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
       <Stack.Navigator
+<<<<<<< HEAD
         initialRouteName="ProductScreen"
+=======
+        initialRouteName="ProfileScreen"
+>>>>>>> 9a0b2ee0bebca5aea503dc49000ff4d77f30c0b0
         screenOptions={{
           headerShown:false
         }}
@@ -21,8 +25,6 @@ function App() {
         <Stack.Screen name="CategoryScreen" component={CategoryScreen} />
         <Stack.Screen name='CartScreen' component={CartScreen}/>
         <Stack.Screen name='HomeScreen' component={HomeScreen}/>
-        <Stack.Screen name='ExploreScreen' component={ExploreScreen}/>
-
       </Stack.Navigator>
   );
 }
