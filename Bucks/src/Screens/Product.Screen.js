@@ -37,6 +37,7 @@ const ProductScreen = () => {
       </View>
     );
   }
+  console.log(data)
   return (
     <KeyboardAwareScrollView
       resetScrollToCoords={{ x: 0, y: 0 }}
