@@ -6,7 +6,12 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-      <Stack.Navigator>
+      <Stack.Navigator
+        initialRouteName="Main"
+        screenOptions={{
+          headerShown:false
+        }}
+      >
         <Stack.Screen name="Category" component={CategoryScreen} />
       </Stack.Navigator>
   );
