@@ -82,10 +82,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
   row: {
     flexDirection: 'row',
     top:20,
-  }
+  },
 })
 
 

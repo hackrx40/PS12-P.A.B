@@ -26,25 +26,27 @@ const ProductScreen = () => {
     FontAwesome.loadFont();
     AntDesign.loadFont();
   }, []);
-  // const productId=45
-  // const { isLoading, error, data } = useQuery(['posts'], async () => {
-  //   const response = await axios.get(`http://127.0.0.1:8000/${productId}`);
-  //   return response.data;
-  // });
-  // if (isLoading) {
-  //   return (
-  //     <View style={styles.loadingContainer}>
-  //       <ActivityIndicator size="large" color="blue" />
-  //     </View>
-  //   );
-  // }
-  // if(error){
-  //   return (
-  //     <View style={styles.errorContainer}>
-  //       <Text>Error: {String(error)}</Text>
-  //     </View>
-  //   );
-  // }
+  const productId = 45;
+  const { isLoading, error, data } = useQuery(["posts"], async () => {
+    const response = await axios.get(`http://127.0.0.1:8000/${productId}`);
+    return response.data;
+  });
+
+  if (isLoading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="blue" />
+      </View>
+    );
+  }
+  if (error) {
+    return (
+      <View style={styles.errorContainer}>
+        <Text>Error: {String(error)}</Text>
+      </View>
+    );
+  }
+  console.log(data);
   return (
     <KeyboardAwareScrollView
       resetScrollToCoords={{ x: 0, y: 0 }}
