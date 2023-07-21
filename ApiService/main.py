@@ -43,3 +43,13 @@ async def get_products(group: str):
     products = await asyncio.to_thread(get_products_by_group, group)
     return {"Products": products}
 
+
+def get_products_by_id(item_id):
+    # Execute the Gremlin query to fetch products by ID number
+    query_result = g.V().hasLabel('Product').has('Id', item_id).valueMap(True).toList()
+    return query_result
+
+@app.get("/{productId}")
+async def getProductDetails(productId:int):
+    product = await asyncio.to_thread(get_products_by_id, productId)
+    return {"Product":product}
