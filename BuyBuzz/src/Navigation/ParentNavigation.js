@@ -27,6 +27,7 @@ import ProductInfo from "../Screens/ProductInfo";
 import Profile from "../Screens/Profile"; // Import the Profile screen
 import { COLOURS } from "../../database/Database";
 import ChoiceScreen from "../Screens/ChoiceScreen";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -73,7 +74,7 @@ const ParentNavigator = () => {
                     style={{
                       width: 24,
                       height: 24,
-                      tintColor: focused ? COLOURS.green : "#8E8E93",
+                      tintColor: focused ? Colors : "#00337C",
                     }}
                   />
                 </View>

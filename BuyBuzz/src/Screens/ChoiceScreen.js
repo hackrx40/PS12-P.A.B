@@ -86,7 +86,7 @@ const ChoiceScreen = () => {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Next</Text>
       </TouchableOpacity>
-      <StatusBar backgroundColor='#00AC76' barStyle="dark-content" />
+      <StatusBar backgroundColor='#00337C' barStyle="dark-content" />
       
       
     </View>
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   },
   item: {
     top:5,
-    backgroundColor: '#00AC76',
+    backgroundColor: '#00337C',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,

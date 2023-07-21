@@ -9,7 +9,7 @@ const Categories = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.row}>
+      
         <TouchableOpacity
           style={styles.button}
           onPress={() => handleImagePress(0)}
@@ -28,8 +28,8 @@ const Categories = () => {
             style={styles.image}
           />
         </TouchableOpacity>
-      </View>
-      <View style={styles.row}>
+      
+      
         <TouchableOpacity
           style={styles.button}
           onPress={() => handleImagePress(2)}
@@ -48,7 +48,7 @@ const Categories = () => {
             style={styles.image}
           />
         </TouchableOpacity>
-      </View>
+      
     </View>
   );
 };
@@ -56,13 +56,13 @@ const Categories = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
-    // justifyContent: "center",
-    // alignItems: "center",
+    marginTop:10,
+
+ 
   },
   row: {
     flexDirection: "row",
-    marginBottom: 10,
+    marginBottom: 5,
   },
   button: {
     flex: 1,
@@ -71,8 +71,9 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   image: {
+    
     width: "100%",
-    height: "43%",
+    height: "100%",
     resizeMode: "cover",
   },
 });
