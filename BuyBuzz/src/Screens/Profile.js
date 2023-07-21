@@ -57,8 +57,8 @@ const Profile = () => {
   const [index, setIndex] = useState(0);
 
   const [routes] = useState([
-    { key: "first", title: "Photos" },
-    { key: "second", title: "Likes" },
+    { key: "first", title: "Cart" },
+    { key: "second", title: "Past Orders" },
   ]);
 
   const renderTabBar = (props) => (
@@ -155,7 +155,7 @@ const Profile = () => {
         >
           <View
             style={{
-              flexDirection: "column",
+              flexDirection: "row",
               alignItems: "center",
               marginHorizontal: SIZES.padding,
             }}
@@ -163,6 +163,8 @@ const Profile = () => {
             <View
               style={{
                 backgroundColor: "#00337C",
+                padding: 10,
+                borderRadius: 8,
               }}
             >
               <TouchableOpacity
@@ -174,13 +176,47 @@ const Profile = () => {
                 <Text style={{ color: "white" }}>Past Orders</Text>
               </TouchableOpacity>
             </View>
+
+            <View
+              style={{
+                backgroundColor: "#00337C",
+                padding: 10,
+                borderRadius: 8,
+              }}
+            >
+              <TouchableOpacity
+                style={{
+                  ...FONTS.h2,
+                  color: COLORS.primary,
+                }}
+              >
+                <Text style={{ color: "white" }}>Edit Profile</Text>
+              </TouchableOpacity>
+            </View>
+            <View
+              style={{
+                backgroundColor: "#00337C",
+                padding: 10,
+                borderRadius: 8,
+              }}
+            >
+              <TouchableOpacity
+                style={{
+                  ...FONTS.h2,
+                  color: COLORS.primary,
+                }}
+              >
+                <Text style={{ color: "white" }}>My Account</Text>
+              </TouchableOpacity>
+            </View>
           </View>
 
-          <View
+          {/* <View
             style={{
               flexDirection: "column",
               alignItems: "center",
               marginHorizontal: SIZES.padding,
+              marginTop: 10
             }}
           >
             <Text
@@ -199,9 +235,9 @@ const Profile = () => {
             >
               Followings
             </Text>
-          </View>
+          </View> */}
 
-          <View
+          {/* <View
             style={{
               flexDirection: "column",
               alignItems: "center",
@@ -224,10 +260,10 @@ const Profile = () => {
             >
               Likes
             </Text>
-          </View>
+          </View> */}
         </View>
 
-        <View style={{ flexDirection: "row" }}>
+        {/* <View style={{ flexDirection: "row" }}>
           <TouchableOpacity
             style={{
               width: 124,
@@ -269,10 +305,10 @@ const Profile = () => {
               Add Friend
             </Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
 
-      <View style={{ flex: 1, marginHorizontal: 22, marginTop: 20 }}>
+      <View style={{ flex: 1, marginHorizontal: 22, marginTop: 50 }}>
         <TabView
           navigationState={{ index, routes }}
           renderScene={renderScene}
