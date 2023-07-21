@@ -189,7 +189,7 @@ const ProductInfo = ({ route, navigation }) => {
                 name="chevron-left"
                 style={{
                   fontSize: 18,
-                  color: "#777777",
+                  color: "#00337C",
                   padding: 12,
                   backgroundColor: "#ffffff",
                   borderRadius: 10,
@@ -231,7 +231,7 @@ const ProductInfo = ({ route, navigation }) => {
               name="book"
               style={{
                 fontSize: 18,
-                color: "green",
+                color: "00337C",
                 marginRight: 6,
               }}
             />
@@ -269,8 +269,8 @@ const ProductInfo = ({ route, navigation }) => {
               name="share-outline"
               style={{
                 fontSize: 24,
-                color: "#00AC76",
-                backgroundColor: "#00AC76" + 10,
+                color: "#00337C",
+                backgroundColor: "#00337C" + 10,
                 padding: 8,
                 borderRadius: 100,
               }}
@@ -320,7 +320,7 @@ const ProductInfo = ({ route, navigation }) => {
             >
               <View
                 style={{
-                  color: "#00AC76",
+                  color: "#00337C",
                   backgroundColor: "#F0F0F3",
                   alignItems: "center",
                   justifyContent: "center",
@@ -333,7 +333,7 @@ const ProductInfo = ({ route, navigation }) => {
                   name="location-pin"
                   style={{
                     fontSize: 16,
-                    color: "#00AC76",
+                    color: "#00337C",
                   }}
                 />
               </View>
@@ -520,7 +520,7 @@ const ProductInfo = ({ route, navigation }) => {
           style={{
             width: "86%",
             height: "90%",
-            backgroundColor: "#00AC76",
+            backgroundColor: "#00337C",
             borderRadius: 20,
             justifyContent: "center",
             alignItems: "center",

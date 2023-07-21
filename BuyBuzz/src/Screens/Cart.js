@@ -257,7 +257,7 @@ const MyCart = ({ navigation }) => {
               >
                 <View
                   style={{
-                    color: "#00AC76",
+                    color: "#00337C",
                     backgroundColor: "#F0F0F3",
                     alignItems: "center",
                     justifyContent: "center",
@@ -270,7 +270,7 @@ const MyCart = ({ navigation }) => {
                     name="truck-delivery-outline"
                     style={{
                       fontSize: 18,
-                      color: "#00AC76",
+                      color: "#00337C",
                     }}
                   />
                 </View>
@@ -336,7 +336,7 @@ const MyCart = ({ navigation }) => {
               >
                 <View
                   style={{
-                    color: "#00AC76",
+                    color: "#00337C",
                     backgroundColor: "#F0F0F3",
                     alignItems: "center",
                     justifyContent: "center",
@@ -349,7 +349,7 @@ const MyCart = ({ navigation }) => {
                     style={{
                       fontSize: 10,
                       fontWeight: "900",
-                      color: "#00AC76",
+                      color: "#00337C",
                       letterSpacing: 1,
                     }}
                   >
@@ -510,7 +510,7 @@ const MyCart = ({ navigation }) => {
           style={{
             width: "86%",
             height: "90%",
-            backgroundColor: "#00AC76",
+            backgroundColor: "#00337C",
             borderRadius: 20,
             justifyContent: "center",
             alignItems: "center",
