@@ -105,9 +105,9 @@ const Home = ({ navigation }) => {
 
         <View style={styles.recommendationContainer}>
           {/* <Text style={styles.recommendationTitle}>Recommended Products</Text> */}
-          <Text style={styles.recommendationSubtitle}>
+          {/* <Text style={styles.recommendationSubtitle}>
             Explore our handpicked selection of products tailored just for you.
-          </Text>
+          </Text> */}
         </View>
 
         <View style={styles.productContainer}>
@@ -129,14 +129,14 @@ const Home = ({ navigation }) => {
             contentContainerStyle={styles.productCardListContainer}
             windowSize={5} // Add this line to set the windowSize prop for the Carousel
           /> */}
-          <View style={styles.productCardContainer}>
+          {/* <View style={styles.productCardContainer}>
             {products.map((data) => (
               <ProductCard data={data} key={data.id} />
             ))}
-          </View>
+          </View> */}
         </View>
 
-        <View style={styles.productContainer}>
+        {/* <View style={styles.productContainer}>
           <View style={styles.productHeader}>
             <Text style={styles.productHeaderText}>You might also like</Text>
           </View>
@@ -149,6 +149,16 @@ const Home = ({ navigation }) => {
               renderItem={({ item }) => <ProductCard data={item} />}
               contentContainerStyle={styles.productCardListContainer}
             />
+          </View>
+        </View> */}
+        <View style={styles.productContainer}>
+          <View style={styles.productHeader}>
+            <Text style={styles.productHeaderText}>You might also like</Text>
+          </View>
+          <View style={styles.productCardContainer}>
+            {accessory.map((data) => (
+              <ProductCard data={data} key={data.id} />
+            ))}
           </View>
         </View>
       </ScrollView>
