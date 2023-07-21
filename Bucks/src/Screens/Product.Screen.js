@@ -22,6 +22,7 @@ const ProductScreen = () => {
     const response = await axios.get(`http://127.0.0.1:8000/${productId}`);
     return response.data;
   });
+
   if (isLoading) {
     return (
       <View style={styles.loadingContainer}>
