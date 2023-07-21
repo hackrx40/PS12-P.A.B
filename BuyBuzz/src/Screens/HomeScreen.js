@@ -95,19 +95,19 @@ const Home = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.greetingText}>Good Morning, Affaan</Text>
         <View style={styles.searchBarContainer}>
-          <AntDesign name="search1" size={20} color="#F7F1E5" />
+          <AntDesign name="search1" size={20} color="#00337C" />
           <TextInput
             style={styles.searchInput}
             placeholder="  Search"
-            placeholderTextColor="white"
+            placeholderTextColor="#00337C"
           />
         </View>
 
         <View style={styles.recommendationContainer}>
           {/* <Text style={styles.recommendationTitle}>Recommended Products</Text> */}
-          <Text style={styles.recommendationSubtitle}>
+          {/* <Text style={styles.recommendationSubtitle}>
             Explore our handpicked selection of products tailored just for you.
-          </Text>
+          </Text> */}
         </View>
 
         <View style={styles.productContainer}>
@@ -129,14 +129,14 @@ const Home = ({ navigation }) => {
             contentContainerStyle={styles.productCardListContainer}
             windowSize={5} // Add this line to set the windowSize prop for the Carousel
           /> */}
-          <View style={styles.productCardContainer}>
+          {/* <View style={styles.productCardContainer}>
             {products.map((data) => (
               <ProductCard data={data} key={data.id} />
             ))}
-          </View>
+          </View> */}
         </View>
 
-        <View style={styles.productContainer}>
+        {/* <View style={styles.productContainer}>
           <View style={styles.productHeader}>
             <Text style={styles.productHeaderText}>You might also like</Text>
           </View>
@@ -149,6 +149,16 @@ const Home = ({ navigation }) => {
               renderItem={({ item }) => <ProductCard data={item} />}
               contentContainerStyle={styles.productCardListContainer}
             />
+          </View>
+        </View> */}
+        <View style={styles.productContainer}>
+          <View style={styles.productHeader}>
+            <Text style={styles.productHeaderText}>You might also like</Text>
+          </View>
+          <View style={styles.productCardContainer}>
+            {accessory.map((data) => (
+              <ProductCard data={data} key={data.id} />
+            ))}
           </View>
         </View>
       </ScrollView>
@@ -173,7 +183,9 @@ const styles = StyleSheet.create({
   searchBarContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#00337C",
+ 
+    borderWidth:2,
+    borderColor:"#00337C",
     borderRadius: 10,
     paddingVertical: 18,
     paddingHorizontal: 18,
