@@ -12,7 +12,6 @@ import {
 } from "react-native";
 import { COLOURS, Items } from "../../database/Database";
 import CarouselComponents from "../Components/mycarousel";
-// import Carousel from "react-native-snap-carousel";
 
 import { AntDesign } from "@expo/vector-icons";
 
@@ -20,7 +19,6 @@ const Home = ({ navigation }) => {
   const [products, setProducts] = useState([]);
   const [accessory, setAccessory] = useState([]);
 
-  //get called on screen loads
   useEffect(() => {
     const unsubscribe = navigation.addListener("focus", () => {
       getDataFromDB();
@@ -28,8 +26,6 @@ const Home = ({ navigation }) => {
 
     return unsubscribe;
   }, [navigation]);
-
-  //get data from DB
 
   const getDataFromDB = () => {
     let productList = [];
@@ -84,11 +80,6 @@ const Home = ({ navigation }) => {
       </TouchableOpacity>
     );
   };
-
-  // const renderCarouselItem = ({ item }) => {
-  //   return <ProductCard data={item} />;
-  // };
-
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={COLOURS.white} barStyle="dark-content" />
@@ -104,10 +95,6 @@ const Home = ({ navigation }) => {
         </View>
 
         <View style={styles.recommendationContainer}>
-          {/* <Text style={styles.recommendationTitle}>Recommended Products</Text> */}
-          {/* <Text style={styles.recommendationSubtitle}>
-            Explore our handpicked selection of products tailored just for you.
-          </Text> */}
         </View>
 
         <View style={styles.productContainer}>
@@ -117,40 +104,7 @@ const Home = ({ navigation }) => {
           <View style={styles.CarouselComponent}>
             <CarouselComponents />
           </View>
-          {/* <Carousel
-            data={accessory}
-            renderItem={renderCarouselItem}
-            sliderWidth={styles.productCardListContainer.width} // Set the slider width to match the container width
-            itemWidth={styles.productCard.width} // Set the item width to match the product card width
-            loop={true}
-            autoplay={true}
-            autoplayDelay={3000}
-            autoplayInterval={5000}
-            contentContainerStyle={styles.productCardListContainer}
-            windowSize={5} // Add this line to set the windowSize prop for the Carousel
-          /> */}
-          {/* <View style={styles.productCardContainer}>
-            {products.map((data) => (
-              <ProductCard data={data} key={data.id} />
-            ))}
-          </View> */}
         </View>
-
-        {/* <View style={styles.productContainer}>
-          <View style={styles.productHeader}>
-            <Text style={styles.productHeaderText}>You might also like</Text>
-          </View>
-          <View>
-            <FlatList
-              data={accessory}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item }) => <ProductCard data={item} />}
-              contentContainerStyle={styles.productCardListContainer}
-            />
-          </View>
-        </View> */}
         <View style={styles.productContainer}>
           <View style={styles.productHeader}>
             <Text style={styles.productHeaderText}>You might also like</Text>
@@ -183,7 +137,7 @@ const styles = StyleSheet.create({
   searchBarContainer: {
     flexDirection: "row",
     alignItems: "center",
- 
+
     borderWidth:2,
     borderColor:"#00337C",
     borderRadius: 10,
