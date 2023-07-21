@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity, Image, StyleSheet } from "react-native";
+import { View, TouchableOpacity, Image, StyleSheet, Text } from "react-native";
 
 const Categories = () => {
   const handleImagePress = (imageIndex) => {

@@ -26,6 +26,7 @@ import CategoriesPage from "../Screens/Categories";
 import ProductInfo from "../Screens/ProductInfo";
 import Profile from "../Screens/Profile"; // Import the Profile screen
 import { COLOURS } from "../../database/Database";
+import ChoiceScreen from "../Screens/ChoiceScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -50,10 +51,10 @@ const ParentNavigator = () => {
                 iconSource = focused
                   ? require("../Assets/images/Home.png")
                   : require("../Assets/images/Home.png");
-              } else if (route.name === "Categories") {
+              } else if (route.name === "ProductInfo") {
                 iconSource = focused
-                  ? require("../Assets/images/Group.png")
-                  : require("../Assets/images/Group.png");
+                  ? require("../Assets/images/Home.png")
+                  : require("../Assets/images/Home.png");
               } else if (route.name === "Home") {
                 iconSource = focused
                   ? require("../Assets/images/Home.png")
@@ -84,6 +85,7 @@ const ParentNavigator = () => {
           <Tab.Screen name="Categories" component={CategoriesPage} />
           <Tab.Screen name="MyCart" component={MyCart} />
           <Tab.Screen name="ProductInfo" component={ProductInfo} />
+
           <Tab.Screen name="Profile" component={Profile} />
         </Tab.Navigator>
       </View>

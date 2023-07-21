@@ -11,6 +11,7 @@ import {
   FlatList,
 } from "react-native";
 import { COLOURS, Items } from "../../database/Database";
+// import Carousel from "react-native-snap-carousel";
 
 import { AntDesign } from "@expo/vector-icons";
 
@@ -83,6 +84,10 @@ const Home = ({ navigation }) => {
     );
   };
 
+  // const renderCarouselItem = ({ item }) => {
+  //   return <ProductCard data={item} />;
+  // };
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={COLOURS.white} barStyle="dark-content" />
@@ -98,7 +103,7 @@ const Home = ({ navigation }) => {
         </View>
 
         <View style={styles.recommendationContainer}>
-          <Text style={styles.recommendationTitle}>Recommended Products</Text>
+          {/* <Text style={styles.recommendationTitle}>Recommended Products</Text> */}
           <Text style={styles.recommendationSubtitle}>
             Explore our handpicked selection of products tailored just for you.
           </Text>
@@ -108,6 +113,18 @@ const Home = ({ navigation }) => {
           <View style={styles.productHeader}>
             <Text style={styles.productHeaderText}>Top Picks for you</Text>
           </View>
+          {/* <Carousel
+            data={accessory}
+            renderItem={renderCarouselItem}
+            sliderWidth={styles.productCardListContainer.width} // Set the slider width to match the container width
+            itemWidth={styles.productCard.width} // Set the item width to match the product card width
+            loop={true}
+            autoplay={true}
+            autoplayDelay={3000}
+            autoplayInterval={5000}
+            contentContainerStyle={styles.productCardListContainer}
+            windowSize={5} // Add this line to set the windowSize prop for the Carousel
+          /> */}
           <View style={styles.productCardContainer}>
             {products.map((data) => (
               <ProductCard data={data} key={data.id} />
