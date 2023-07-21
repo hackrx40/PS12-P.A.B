@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const sampleData = {
   Result:
@@ -14,11 +15,13 @@ const ProductItem = () => {
   const productItem = data[0];
 
   // Limit the character length of the Title
-  const maxTitleLength = 25;
+  const maxTitleLength = 60;
   const limitedTitle =
     productItem.Title.length > maxTitleLength
       ? productItem.Title.substring(0, maxTitleLength) + "..."
       : productItem.Title;
+
+  const numStars = Math.round(productItem.AvgRating);
 
   return (
     <View style={styles.container}>
@@ -28,8 +31,11 @@ const ProductItem = () => {
           style={styles.image}
         />
         <Text style={styles.header}>{limitedTitle}</Text>
-        <Text style={styles.body}>{productItem.Group}</Text>
-        <Text style={styles.body}>{productItem.AvgRating}</Text>
+        {/* <Text style={styles.body}>{productItem.Group}</Text> */}
+        <View style={styles.starsContainer}>
+          <MaterialIcons name="star" size={18} color="gold" />
+          {/* <Text style={styles.starsText}>{numStars}</Text> */}
+        </View>
       </TouchableOpacity>
     </View>
   );
@@ -57,6 +63,15 @@ const styles = StyleSheet.create({
   },
   body: {
     fontSize: 10,
+  },
+  starsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 5,
+  },
+  starsText: {
+    fontSize: 12,
+    marginLeft: 3,
   },
 });
 
