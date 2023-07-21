@@ -8,16 +8,15 @@ import {
   Image,
   TextInput,
   StyleSheet,
+  FlatList,
 } from "react-native";
 import { COLOURS, Items } from "../../database/Database";
+
 import { AntDesign } from "@expo/vector-icons";
-import sampleData from "../../database/SampleData.json";
-// const productImage = require("../Assets/images/Book.png");
 
 const Home = ({ navigation }) => {
   const [products, setProducts] = useState([]);
   const [accessory, setAccessory] = useState([]);
-  //   const products = sampleData.Result;
 
   //get called on screen loads
   useEffect(() => {
@@ -90,11 +89,11 @@ const Home = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.greetingText}>Good Morning, Affaan</Text>
         <View style={styles.searchBarContainer}>
-          <AntDesign name="search1" size={20} color="#999" />
+          <AntDesign name="search1" size={20} color="#F7F1E5" />
           <TextInput
             style={styles.searchInput}
-            placeholder="Search"
-            placeholderTextColor="#999"
+            placeholder="  Search"
+            placeholderTextColor="white"
           />
         </View>
 
@@ -120,11 +119,14 @@ const Home = ({ navigation }) => {
           <View style={styles.productHeader}>
             <Text style={styles.productHeaderText}>You might also like</Text>
           </View>
-          <View style={styles.productCardContainer}>
-            {accessory.map((data) => (
-              <ProductCard data={data} key={data.id} />
-            ))}
-          </View>
+          <FlatList
+            data={accessory}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => <ProductCard data={item} />}
+            contentContainerStyle={styles.productCardListContainer}
+          />
         </View>
       </ScrollView>
     </View>
@@ -135,30 +137,32 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLOURS.white,
-    // backgroundColor: "#DBDFAA",
+    // backgroundColor: "#181818",
   },
   greetingText: {
     fontSize: 28,
     color: COLOURS.black,
     fontWeight: "500",
     letterSpacing: 1,
-    padding: 20,
+    padding: 15,
+    marginLeft: 5,
   },
   searchBarContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#f5f5f5",
+    backgroundColor: COLOURS.green,
     borderRadius: 10,
     paddingVertical: 18,
     paddingHorizontal: 18,
     marginHorizontal: 16,
     marginBottom: 30,
-    marginTop: 10,
+    marginTop: 14,
   },
   searchInput: {
     flex: 1,
     fontSize: 16,
-    color: "#333",
+    color: "white",
+    padding: 5,
   },
   recommendationContainer: {
     paddingHorizontal: 16,
@@ -235,6 +239,10 @@ const styles = StyleSheet.create({
     width: "80%",
     height: "80%",
     resizeMode: "contain",
+  },
+  productCardListContainer: {
+    paddingLeft: 16,
+    paddingRight: 8, // Reduce the right padding to create closer spacing
   },
   productName: {
     fontSize: 12,

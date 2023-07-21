@@ -13,18 +13,18 @@ export const Items = [
   {
     id: 1,
     category: "product",
-    productName: "MI Super Bass Bluetooth Wireless Headphones",
+    productName: "Harry Potter and the Prisoner of Azkaban",
     productPrice: 1799,
     description:
       "Up to 20 hours battery life | Super powerful Bass | 40mm dynamic driver | Pressure less ear muffs | Bluetooth 5.0 | Voice control",
     isOff: true,
     offPercentage: 10,
-    productImage: require("../database/images/products/Mi1.png"),
+    productImage: require("../database/images/products/Books.png"),
     isAvailable: true,
     productImageList: [
-      require("../database/images/products/Mi1.png"),
-      require("../database/images/products/Mi2.png"),
-      require("../database/images/products/Mi3.png"),
+      require("../database/images/products/Books.png"),
+      require("../database/images/products/Books.png"),
+      require("../database/images/products/Books.png"),
     ],
   },
   {
