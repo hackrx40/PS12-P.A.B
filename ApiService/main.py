@@ -7,7 +7,7 @@ import asyncio
 import json
 from concurrent.futures import ThreadPoolExecutor
 
-from Functions.dataTransform import dataTransform
+from Functions.dataTransform import transformData
 
 graph = Graph()
 g = graph.traversal().withRemote(DriverRemoteConnection('ws://localhost:8182/gremlin','g'))
@@ -47,7 +47,8 @@ async def get_products(group: str):
 def get_products_by_id(item_id):
     # Execute the Gremlin query to fetch products by ID number
     query_result = g.V().hasLabel('Product').has('Id', item_id).valueMap(True).toList()
-    return query_result
+    return transformData(query_result[0])
+    #return query_result[0]
 
 @app.get("/{productId}")
 async def getProductDetails(productId:int):
