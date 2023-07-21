@@ -31,3 +31,15 @@ async def root():
     return {"Products":products}
 
 
+
+def get_products_by_group(group):
+    # Execute the Gremlin query to fetch products by group
+    query_result = g.V().hasLabel('Product').has('group', group).valueMap(True).toList()
+    return query_result
+
+@app.get("/products/{group}")
+async def get_products(group: str):
+    # Start the asynchronous task to fetch products by group
+    products = await asyncio.to_thread(get_products_by_group, group)
+    return {"Products": products}
+
