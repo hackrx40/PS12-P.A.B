@@ -23,7 +23,7 @@ const ProfileScreen = () => {
       <SafeAreaView style={{flex:1,backgroundColor:"white"}}>
         <StatusBar/>
         <View style={styles.topSection}>
-          <Text style={styles.heading}>Profile</Text>
+          <Text style={styles.heading}>Welcome!</Text>
           <SimpleLineIcons name="options-vertical" size={24} color="black" />
         </View>
         <View style={styles.dataContainer}>
@@ -34,7 +34,7 @@ const ProfileScreen = () => {
             />
           </View>
           <View style={styles.rightData}>
-            <Text style={styles.username}>Parth Katiyar</Text>
+            <Text style={styles.username}>Mr. A Bajaj</Text>
             <Text style={styles.email}>parthkatiyar04@gmail.com</Text>
             <Text style={styles.email}>+91 9026971112</Text>
           </View>
