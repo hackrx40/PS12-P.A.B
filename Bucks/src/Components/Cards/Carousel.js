@@ -66,6 +66,8 @@ const CarouselComponent = () => {
   );
 };
 
+export default CarouselComponent
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

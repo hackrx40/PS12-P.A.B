@@ -26,7 +26,7 @@ const ProductScreen = () => {
     FontAwesome.loadFont();
     AntDesign.loadFont();
   }, []);
-  const productId = 45;
+  const productId = 46;
   const { isLoading, error, data } = useQuery(["posts"], async () => {
     const response = await axios.get(`http://127.0.0.1:8000/${productId}`);
     return response.data;
@@ -64,8 +64,7 @@ const ProductScreen = () => {
         </View>
         <View style={styles.productTopContainer}>
           <View style={styles.sampleImage} />
-          <Text style={styles.productName}>Harry Potter</Text>
-
+          <Text style={styles.productName}>{data["Product"]["title"]}</Text>
           {/* <Text style={styles.productName}>{data["Product"]["title"]}</Text> */}
           <Text style={styles.companyName}>John Doe Corporation</Text>
           <Text style={styles.stars}>{"⭐️⭐️⭐️"}</Text>
@@ -80,12 +79,12 @@ const ProductScreen = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </Text>
+
         <Text style={styles.heading}>You Might Also Like</Text>
         <View style={{ textAlign: "center" }}>
-          <View>
-            <CarouselComponent />
-          </View>
+          <CarouselComponent/>
         </View>
+
         <Text style={styles.heading}>Similar Items to {"Book"}</Text>
         <View>
           <View style={styles.row}>
