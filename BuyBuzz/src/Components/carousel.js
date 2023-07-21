@@ -43,10 +43,10 @@ const CarouselComponent = () => {
       />
       <View style={styles.arrowButtonContainer}>
         <TouchableOpacity style={styles.arrowButton} onPress={onPrevious}>
-          <Icon name="chevron-left" size={20} color="black" />
+          <Icon name="chevron-left" size={20} color="#00337C" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.arrowButton} onPress={onNext}>
-          <Icon name="chevron-right" size={20} color="black" />
+          <Icon name="chevron-right" size={20} color="#00337C" />
         </TouchableOpacity>
       </View>
     </View>

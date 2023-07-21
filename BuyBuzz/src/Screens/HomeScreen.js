@@ -95,11 +95,11 @@ const Home = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.greetingText}>Good Morning, Affaan</Text>
         <View style={styles.searchBarContainer}>
-          <AntDesign name="search1" size={20} color="#F7F1E5" />
+          <AntDesign name="search1" size={20} color="#00337C" />
           <TextInput
             style={styles.searchInput}
             placeholder="  Search"
-            placeholderTextColor="white"
+            placeholderTextColor="#00337C"
           />
         </View>
 
@@ -183,7 +183,9 @@ const styles = StyleSheet.create({
   searchBarContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#00337C",
+ 
+    borderWidth:2,
+    borderColor:"#00337C",
     borderRadius: 10,
     paddingVertical: 18,
     paddingHorizontal: 18,
