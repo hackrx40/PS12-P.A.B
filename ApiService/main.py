@@ -53,3 +53,21 @@ def get_products_by_id(item_id):
 async def getProductDetails(productId:int):
     product = await asyncio.to_thread(get_products_by_id, productId)
     return {"Product":product}
+
+
+
+def get_similar_products(productId):
+    # Execute the Gremlin query to fetch products by ID number
+    query_result = g.V().hasLabel('Product').has('Id', productId).values("similar").toList()
+    return query_result
+
+
+@app.get("/similar/{productId}")
+async def getSimilarProducts(productId:int):
+    product = await asyncio.to_thread(get_similar_products, productId)
+    data=json.loads(product[0])
+    data=[int(value) for value in data]
+    return {"Similar Products":data}
+
+
+
