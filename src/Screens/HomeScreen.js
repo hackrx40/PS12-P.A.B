@@ -11,6 +11,7 @@ import {
   FlatList,
 } from "react-native";
 import { COLOURS, Items } from "../../database/Database";
+import CarouselComponents from "../Components/mycarousel";
 // import Carousel from "react-native-snap-carousel";
 
 import { AntDesign } from "@expo/vector-icons";
@@ -113,6 +114,9 @@ const Home = ({ navigation }) => {
           <View style={styles.productHeader}>
             <Text style={styles.productHeaderText}>Top Picks for you</Text>
           </View>
+          <View style={styles.CarouselComponent}>
+            <CarouselComponents />
+          </View>
           {/* <Carousel
             data={accessory}
             renderItem={renderCarouselItem}
@@ -136,14 +140,16 @@ const Home = ({ navigation }) => {
           <View style={styles.productHeader}>
             <Text style={styles.productHeaderText}>You might also like</Text>
           </View>
-          <FlatList
-            data={accessory}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => <ProductCard data={item} />}
-            contentContainerStyle={styles.productCardListContainer}
-          />
+          <View>
+            <FlatList
+              data={accessory}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item }) => <ProductCard data={item} />}
+              contentContainerStyle={styles.productCardListContainer}
+            />
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -167,7 +173,7 @@ const styles = StyleSheet.create({
   searchBarContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: COLOURS.green,
+    backgroundColor: "#00337C",
     borderRadius: 10,
     paddingVertical: 18,
     paddingHorizontal: 18,
@@ -183,6 +189,9 @@ const styles = StyleSheet.create({
   },
   recommendationContainer: {
     paddingHorizontal: 16,
+  },
+  CarouselComponent: {
+    padding: 15,
   },
   recommendationTitle: {
     fontSize: 26,
@@ -258,8 +267,8 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   productCardListContainer: {
-    paddingLeft: 16,
-    paddingRight: 8, // Reduce the right padding to create closer spacing
+    paddingLeft: 10,
+    paddingRight: 3, // Reduce the right padding to create closer spacing
   },
   productName: {
     fontSize: 12,
