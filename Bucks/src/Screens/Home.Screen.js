@@ -34,18 +34,18 @@ const HomeScreen = () => {
       <SafeAreaView style={{ flex: 1 }}>
         <StatusBar />
         <View style={styles.topBar}>
-          <Text style={styles.salutation}>Good Morning Parth</Text>
+          <Text style={styles.salutation}>Good Morning Bajaj</Text>
           <View style={styles.rightGroup}>
             <TouchableOpacity>
               <AntDesign
-                name="heart"
+                name="Heart"
                 size={24}
-                color="black"
+                color="#1E4BA3"
                 style={{ marginRight: 16 }}
               />
             </TouchableOpacity>
             <TouchableOpacity>
-              <FontAwesome name="bell" size={24} color="black" />
+              <FontAwesome name="bell" size={24} color="#1E4BA3" />
             </TouchableOpacity>
           </View>
         </View>
