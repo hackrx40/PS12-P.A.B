@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
       <Stack.Navigator
-        initialRouteName="ProfileScreen"
+        initialRouteName="Cart"
         screenOptions={{
           headerShown:false
         }}
