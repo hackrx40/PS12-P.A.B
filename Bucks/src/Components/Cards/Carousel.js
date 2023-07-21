@@ -1,8 +1,12 @@
 import React, { useRef, useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+// import { SearchBar } from "react-native-screens";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import Icon from "react-native-vector-icons/FontAwesome";
 import sampleData from "../../../assets/sampleData.json";
+// import SlideButton from "rn-slide-button";
+// import SlideButton from "../Buttons/SlideButton";
+import SearchBar from "../Buttons/SearchBar";
 
 const CarouselComponent = () => {
   const carouselRef = useRef(null);
@@ -54,7 +58,6 @@ const CarouselComponent = () => {
         // enableSnap
         onSnapToItem={(index) => setActiveSlide(index)}
       />
-
       <View style={styles.arrowButtonContainer}>
         <TouchableOpacity style={styles.arrowButton} onPress={onPrevious}>
           <Icon name="chevron-left" size={20} color="black" />
@@ -63,6 +66,11 @@ const CarouselComponent = () => {
           <Icon name="chevron-right" size={20} color="black" />
         </TouchableOpacity>
       </View>
+      {/* <View style={styles.cont}>
+        <SlideButton />
+      </View> */}
+      <SearchBar />
+      {/* <SlideButton title="Slide To Unlock" />; */}
     </View>
   );
 };
@@ -72,6 +80,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#f5f5f5",
   },
   itemImage: {
     width: 120,
