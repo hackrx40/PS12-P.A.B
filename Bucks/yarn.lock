@@ -1451,6 +1451,10 @@
   resolved "https://registry.yarnpkg.com/@expo/vector-icons/-/vector-icons-13.0.0.tgz#e2989b85e95a82bce216f88cf8fb583ab050ec95"
   integrity sha512-TI+l71+5aSKnShYclFa14Kum+hQMZ86b95SH6tQUG3qZEmLTarvWpKwqtTwQKqvlJSJrpFiSFu3eCuZokY6zWA==
 
+"@expo/vector-icons@expo/vector-icons":
+  version "13.0.0"
+  resolved "https://codeload.github.com/expo/vector-icons/tar.gz/9848cf9d6979c446f17e26314b6ba86c088ec1a4"
+
 "@expo/xcpretty@^4.2.1":
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@expo/xcpretty/-/xcpretty-4.2.2.tgz#7890f86b017015be8a20242ae74fe6ed4b80a92c"
