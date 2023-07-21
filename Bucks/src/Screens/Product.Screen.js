@@ -1,7 +1,9 @@
-import { ScrollView, StyleSheet, Text, View,StatusBar, SafeAreaView, TouchableOpacity, Touchable } from 'react-native'
+import { ScrollView, StyleSheet, Text, View,StatusBar, SafeAreaView, TouchableOpacity, Touchable,ActivityIndicator } from 'react-native'
 import React,{useEffect} from 'react'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { FontAwesome ,Ionicons,AntDesign} from '@expo/vector-icons';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 import styles from '../Styles/Product.Styles'
 
 const ProductScreen = () => {
@@ -10,7 +12,25 @@ const ProductScreen = () => {
     FontAwesome.loadFont();
     AntDesign.loadFont();
   }, [])
-
+  const productId=45
+  const { isLoading, error, data } = useQuery(['posts'], async () => {
+    const response = await axios.get(`http://127.0.0.1:8000/${productId}`);
+    return response.data;
+  });
+  if (isLoading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="blue" />
+      </View>
+    );
+  }
+  if(error){
+    return (
+      <View style={styles.errorContainer}>
+        <Text>Error: {String(error)}</Text>
+      </View>
+    );
+  }
   return (
     <KeyboardAwareScrollView
       resetScrollToCoords={{ x: 0, y: 0 }}
@@ -28,7 +48,7 @@ const ProductScreen = () => {
         </View>
         <View style={styles.productTopContainer}>
           <View style={styles.sampleImage}/>
-          <Text style={styles.productName}>Book Name and meta</Text>
+          <Text style={styles.productName}>{data["Product"]["title"]}</Text>
           <Text style={styles.companyName}>John Doe Corporation</Text>
           <Text style={styles.stars}>{"⭐️⭐️⭐️"}</Text>
         </View>

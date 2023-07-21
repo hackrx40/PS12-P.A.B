@@ -71,7 +71,17 @@ const styles = StyleSheet.create({
   reviewBox:{
     justifyContent: "center",
     alignItems: "center",
-  }
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 })
 
 

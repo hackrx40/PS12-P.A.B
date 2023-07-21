@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
       <Stack.Navigator
-        initialRouteName="ExploreScreen"
+        initialRouteName="ProductScreen"
         screenOptions={{
           headerShown:false
         }}
