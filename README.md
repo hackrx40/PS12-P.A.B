@@ -115,4 +115,4 @@ Only developers.
 | :------------- | :----------: |
 |  Parth Katiyar   | [Github](https://github.com/Parth442002) |
 |  Bhurva Sharma  | [GitHub](https://github.com/Bhurva6) |
-| Affaan Kidwai  | [[GitHub](https://github.com/affaankidwai) |
+| Affaan Kidwai  | [GitHub](https://github.com/affaankidwai) |
