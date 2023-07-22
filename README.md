@@ -26,16 +26,14 @@ To help scale businesses to their full potential and reach the right customers a
 
 
 ## Ways through which people can access the application
-### 1. Scan code 
-![WhatsApp Image 2022-08-31 at 5 18 23 PM](https://user-images.githubusercontent.com/75165587/188300397-d861e4af-1a5f-42ed-af19-058c591460c0.jpeg)
-### 2. [Website Link](https://bhurvaxsharmaindia.wixsite.com/mysite-2/home)
-### 3. The moblie application 
+
+### 1. The moblie application 
 
 ## How the App Looks 🤜🔥🤛
-![Untitled-1](https://user-images.githubusercontent.com/75165587/188301077-39431510-a410-41bc-9fd1-9673ff653f90.png)
+
 
 ## How the Website Looks 🤜🔥🤛
-![Untitled-2](https://user-images.githubusercontent.com/75165587/188302391-f021215f-6d43-43dc-8908-a16e30517427.png)
+
 
 
 ## How we built it 🔧
