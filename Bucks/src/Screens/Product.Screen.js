@@ -25,7 +25,7 @@ const ProductScreen = () => {
   });
 
 
-  
+
 
 
   return (
@@ -49,19 +49,10 @@ const ProductScreen = () => {
           <Text style={styles.companyName}>Beginning ASP.NET Databases using C#</Text>
           <TouchableOpacity>
           <View style={styles.row}><Octicons name="graph" size={24} color="black" /><Text>  48408</Text></View>
-            
           </TouchableOpacity>
-<<<<<<< HEAD
-
           <Text style={styles.stars}>{"⭐️⭐️⭐️"}</Text>
         </View>
         <Text style= {styles.descText}>ASIN:</Text>
-=======
-            
-          
-        </View>
-        <Text style= {styles.descText}>ASIN: 1861007418</Text> 
->>>>>>> 039ae5b (prod screen)
         <Text style={styles.heading}>Description</Text>
 
         <Text style={styles.descText}>
@@ -73,35 +64,6 @@ const ProductScreen = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </Text>
-<<<<<<< HEAD
-
-        <Text style={styles.heading}>You Might Also Like</Text>
-        <View style={{ textAlign: "center" }}>
-          <CarouselComponent/>
-        </View>
-
-        <Text style={styles.heading}>Similar Items to {"Book"}</Text>
-        <View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-        </View>
-
-=======
->>>>>>> 039ae5b (prod screen)
         <View style={styles.reviewBox}>
           <View
             style={{
@@ -183,13 +145,13 @@ const ProductScreen = () => {
             >
               Total: 4
             </Text>
-            
+
           </View>
         </View>
         <Text style={styles.heading}>You Might Also Like</Text>
         <View style={{ textAlign: "center" }}>
           <View>
-           
+
           </View>
         </View>
         <Text style={styles.heading}>Similar Items to {"Book"}</Text>
@@ -212,7 +174,7 @@ const ProductScreen = () => {
           </View>
         </View>
 
-       
+
       </SafeAreaView>
     </KeyboardAwareScrollView>
   );
