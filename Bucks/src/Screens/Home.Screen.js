@@ -11,8 +11,12 @@ import { FontAwesome, Ionicons, AntDesign } from "@expo/vector-icons";
 import styles from "../Styles/Home.Styles";
 import HomeOption from "../Components/Buttons/HomeOptions";
 import SnapCarousel from "../Components/Carousel/CompanyCarousel";
+import axios from "axios";
+import {useQuery} from "@tanstack/react-query"
+
 import ProductItem from "../Components/Cards/ProductItem";
 import SearchBar from "../Components/Buttons/SearchBar";
+import Grid from "../Components/Cards/CardGrid";
 
 const HomeScreen = ({navigation}) => {
   useEffect(() => {
@@ -20,7 +24,21 @@ const HomeScreen = ({navigation}) => {
     FontAwesome.loadFont();
     AntDesign.loadFont();
   }, []);
-
+  const { isLoading, error, data } = useQuery(["posts"], async() => {
+    const response=await axios.get("http://localhost:8000/")
+    return response.data["Products"]
+  });
+  if(isLoading){
+    return(
+      <Text>Loading</Text>
+    )
+  }
+  if(error){
+    return(
+      <Text>Error</Text>
+    )
+  }
+  console.log(data)
   return (
     <KeyboardAwareScrollView
       resetScrollToCoords={{ x: 0, y: 0 }}
@@ -66,24 +84,7 @@ const HomeScreen = ({navigation}) => {
             <Text style={styles.seeAll}>See All</Text>
           </TouchableOpacity>
         </View>
-        <View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-        </View>
+        <Grid data={data} navigation={navigation}/>
       </SafeAreaView>
     </KeyboardAwareScrollView>
   );
