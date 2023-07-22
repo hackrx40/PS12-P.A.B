@@ -14,8 +14,9 @@ const ProductScreen = ({route,navigation}) => {
     Ionicons.loadFont();
     FontAwesome.loadFont();
     AntDesign.loadFont();
+    const {productId}=route.params
   }, []);
-  const {productId}=route.params
+
   const { isLoading, error, data } = useQuery(["posts"], () => {
     return ProductInfo(productId)
   });
