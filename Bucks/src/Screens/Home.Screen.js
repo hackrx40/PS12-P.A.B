@@ -91,12 +91,6 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         <SnapCarousel navigation={navigation} />
-        <View style={styles.topContainer}>
-          <Text style={styles.heading}>Products just for you</Text>
-          <TouchableOpacity>
-            <Text style={styles.seeAll}>See All</Text>
-          </TouchableOpacity>
-        </View>
         <View>
           <View style={styles.row}>
             <ProductItem></ProductItem>
