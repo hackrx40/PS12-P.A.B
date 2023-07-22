@@ -6,13 +6,14 @@ import ProductScreen from '../Screens/Product.Screen';
 import ProfileScreen from '../Screens/Profile.Screen';
 import HomeScreen from "../Screens/Home.Screen"
 import ExploreScreen from '../Screens/Explore.Screen';
+import LoginScreen from "../Screens/Login.Screen"
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
       <Stack.Navigator
-        initialRouteName="ProductScreen"
+        initialRouteName="LoginScreen"
         screenOptions={{
           headerShown:false
         }}
@@ -22,6 +23,7 @@ function App() {
         <Stack.Screen name='CartScreen' component={CartScreen}/>
         <Stack.Screen name='HomeScreen' component={HomeScreen}/>
         <Stack.Screen name='ProfileScreen' component={ProfileScreen}/>
+        <Stack.Screen name='LoginScreen' component={LoginScreen}/>
       </Stack.Navigator>
   );
 }

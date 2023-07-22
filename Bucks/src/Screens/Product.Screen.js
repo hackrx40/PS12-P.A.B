@@ -8,6 +8,7 @@ import styles from '../Styles/Product.Styles'
 import Star from '../Components/star';
 import ProductItem from '../Components/Cards/ProductItem';
 import LongItem from '../Components/Cards/LongItem';
+import CarouselComponent from "../Components/Cards/Carousel"
 
 
 
