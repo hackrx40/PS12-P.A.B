@@ -39,7 +39,7 @@ const ProfileScreen = () => {
             <Text style={styles.email}>+91 9026971112</Text>
           </View>
         </View>
-        <Text style={{bottom:60, left:20, fontSize:16,textDecorationLine:true}}>Top Interests:</Text>
+        <Text style={{bottom:60, left:20, fontSize:16,textDecorationLine:"underline"}}>Top Interests:</Text>
         <View>
             <TouchableOpacity style={{
               flex:1,
@@ -56,10 +56,8 @@ const ProfileScreen = () => {
               margin:5
             }}><Text style={{fontSize:16}}>Books</Text>
             </TouchableOpacity>
-           
-            
           </View>
-          
+
         <View style={styles.accountOverview}>
           <Text style={styles.overviewHeading}>Account OverView</Text>
           <OverViewRow name="home" text="My Profile"/>
@@ -83,10 +81,10 @@ function OverViewRow({name,text}){
       </View>
       <AntDesign name="right" size={32} color="white" />
     </View>
-    
 
-    
-    
+
+
+
   )
-  
+
 }

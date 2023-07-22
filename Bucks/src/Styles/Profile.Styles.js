@@ -53,16 +53,15 @@ const styles = StyleSheet.create({
     color:'white',
     bottom:5,
     left:70,
-    textDecorationLine:true,
     fontSize:24
-   
+
   },
   optionRow:{
     flexDirection:"row",
     paddingHorizontal:24,
     justifyContent:"space-between",
     paddingVertical:16,
-    
+
   },
   rowLeftGroup:{
     flexDirection:"row",
