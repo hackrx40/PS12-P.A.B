@@ -11,7 +11,6 @@ import LongItem from '../Components/Cards/LongItem';
 import CarouselComponent from "../Components/Cards/Carousel"
 
 
-
 const ProductScreen = () => {
   useEffect(() => {
     Ionicons.loadFont();
@@ -23,17 +22,22 @@ const ProductScreen = () => {
     const response = await axios.get(`http://127.0.0.1:8000/${productId}`);
     return response.data;
   });
-
-
-
-
-
+  if(isLoading){
+    return(
+      <Text>Loading</Text>
+    )
+  }
+  if(error){
+    return(
+      <Text>Error</Text>
+    )
+  }
   return (
     <KeyboardAwareScrollView
-      resetScrollToCoords={{ x: 0, y: 0 }}
+      //resetScrollToCoords={{ x: 0, y: 0 }}
       scrollEnabled={true}
     >
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{}}>
         <StatusBar />
         <View style={styles.topSection}>
           <TouchableOpacity style={styles.backButton}>
@@ -45,14 +49,20 @@ const ProductScreen = () => {
         </View>
         <View style={styles.productTopContainer}>
           <View style={styles.sampleImage}/>
-          <Text style={styles.productName}>{["Product"]["title"]}</Text>
-          <Text style={styles.companyName}>Beginning ASP.NET Databases using C#</Text>
+          <Text
+            style={styles.productName}
+            numberOfLines={2}
+            adjustsFontSizeToFit
+            >{data["Product"]["title"]}</Text>
+          <Text style={styles.companyName}>By- Corporation</Text>
           <TouchableOpacity>
-          <View style={styles.row}><Octicons name="graph" size={24} color="black" /><Text>  48408</Text></View>
+          <View style={styles.row}>
+            <Octicons name="graph" size={24} color="black" />
+            <Text style={{marginLeft:4}}>{data["Product"]["salesrank"]}</Text>
+          </View>
           </TouchableOpacity>
-          <Text style={styles.stars}>{"⭐️⭐️⭐️"}</Text>
         </View>
-        <Text style= {styles.descText}>ASIN:</Text>
+        <Text style= {styles.descText}>ASIN: {data["Product"]["ASIN"]}</Text>
         <Text style={styles.heading}>Description</Text>
 
         <Text style={styles.descText}>
@@ -66,8 +76,9 @@ const ProductScreen = () => {
         </Text>
 
         <Text style={styles.heading}>You Might Also Like</Text>
-        <View style={{ textAlign: "center" }}>
-          <CarouselComponent/>
+        <View style={{ textAlign: "center",paddingVertical:16, }}>
+          {/*For recommendations*/}
+          <CarouselComponent productId={data["Product"]["Id"]}/>
         </View>
 
         <Text style={styles.heading}>Similar Items to {"Book"}</Text>

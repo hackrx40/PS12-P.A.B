@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import pandas as pd
 from Model.recommender import productRecommendations
 import json
+import uvicorn
 app = FastAPI()
 
 @app.get("/")
@@ -23,3 +24,7 @@ async def recommend_product(productId):
 async def similar_product(productId):
     productId=int(productId)
     return {"Result":"Result"}
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

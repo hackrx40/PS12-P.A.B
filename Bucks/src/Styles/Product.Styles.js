@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     fontWeight:"600",
     textAlign:"center",
     marginTop:8,
+    paddingHorizontal:8
   },
   companyName:{
     fontSize:20,
@@ -62,13 +63,13 @@ const styles = StyleSheet.create({
     fontSize:20,
     fontWeight:"600",
     paddingLeft:20,
-   
- 
+    marginTop:16,
   },
   descText:{
     padding:20,
     paddingVertical:10,
     letterSpacing:.5,
+    fontWeight:"400"
   },
   reviewBox:{
     justifyContent: "center",
@@ -88,6 +89,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     top:20,
+    alignItems:"center",
   },
 })
 
