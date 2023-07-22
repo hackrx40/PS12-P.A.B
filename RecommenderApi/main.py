@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import pandas as pd
-from Model.recommender import productRecommendations
+from recommenderFunction import productRecommendations
+
 import json
 import uvicorn
 app = FastAPI()

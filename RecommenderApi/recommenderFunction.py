@@ -4,11 +4,11 @@ import networkx as nx
 import joblib
 
 
-X_GraphSAGE=pd.read_csv("./X_graph.csv").set_index("Id")
-nodes=pd.read_csv("../ModelData/nodesData.csv")
+X_GraphSAGE=pd.read_csv("./Model/X_graph.csv").set_index("Id")
+nodes=pd.read_csv("./ModelData/nodesData.csv")
 nodes = nodes.set_index("Id")
 
-NN_MODEL=joblib.load("./NNMODEL.pkl")
+NN_MODEL=joblib.load("./Model/NNMODEL.pkl")
 
 
 

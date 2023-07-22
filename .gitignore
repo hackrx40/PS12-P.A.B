@@ -37,6 +37,8 @@ RecommendApi/Dataset
 RecommendApi/Model
 RecommendApi/ModelData
 RecommendApi/Model/__pycache__
+RecommendApi/Newter
+
 
 #Api Service
 ApiService/service
