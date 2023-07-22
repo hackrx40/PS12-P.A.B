@@ -6,12 +6,12 @@
 
 
 ## Inspiration💡
-After China and the US, India had the third-largest online shopper base of 150 million in FY21 and is expected to be 350 million by FY26. Keeping in mind the growing demands of modern India, e-commerce is set to change forever. The e-commerce business is totally saturated with everything at our fingertips but that also means it is prone to mishaps. Hence, we make use of what the 21st century is famous for- TECHNOLOGY! to truly transform businesses and how they operate in a fast paced country like India.
+After China and the US, India had the third-largest online shopper base of 150 million in FY21 and is expected to be 350 million by FY26. Keeping in mind the growing demands of modern India, e-commerce is set to change forever. The e-commerce business is totally saturated with everything at our fingertips but that also means it is prone to mishaps. Hence, we make use of what the 21st century is famous for- TECHNOLOGY! to truly transform businesses and how they operate in a fast-paced country like India.
 
 Our main goal is to help businesses make more money and customers gain an enjoyable and personalized shopping experience.
 
 
-## What are we solving ? 🎠
+## What are we solving? 
 We aim to truly revolutionize the e-commerce shopping experience for everyone, all around our country, in every language possible! We want to give online shoppers the same kind of personalized experience as they would in a traditional in-person interaction. After covid the whole world is online and e-commerce truly helps bring the world at your fingertips hence we make use of GRAPH ML. A highly advanced way to bring the users the best and most relevant things to them.
 
 
@@ -57,6 +57,7 @@ The unique combination of these features empowers our solution to deliver next-g
 ## How the App Looks 🤜🔥🤛
 
 
+
 ## Tech Stack 🔨
 1. React Native
 2. JanusGraph
@@ -66,7 +67,7 @@ The unique combination of these features empowers our solution to deliver next-g
 6. Visual Studio
 7. Expo
 8. RESTAPI
-9. 
+9. Figma
 10. Dataset used - SNAP amazon co- purchasing (https://snap.stanford.edu/data/amazon0601.html)
 
 ## Challenges we ran into but overcame! 🏃‍♂️
