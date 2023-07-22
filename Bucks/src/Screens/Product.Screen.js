@@ -51,17 +51,10 @@ const ProductScreen = () => {
           <View style={styles.row}><Octicons name="graph" size={24} color="black" /><Text>  48408</Text></View>
             
           </TouchableOpacity>
-<<<<<<< HEAD
 
           <Text style={styles.stars}>{"⭐️⭐️⭐️"}</Text>
         </View>
         <Text style= {styles.descText}>ASIN:</Text>
-=======
-            
-          
-        </View>
-        <Text style= {styles.descText}>ASIN: 1861007418</Text> 
->>>>>>> 039ae5b (prod screen)
         <Text style={styles.heading}>Description</Text>
 
         <Text style={styles.descText}>
@@ -73,7 +66,6 @@ const ProductScreen = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </Text>
-<<<<<<< HEAD
 
         <Text style={styles.heading}>You Might Also Like</Text>
         <View style={{ textAlign: "center" }}>
@@ -100,8 +92,6 @@ const ProductScreen = () => {
           </View>
         </View>
 
-=======
->>>>>>> 039ae5b (prod screen)
         <View style={styles.reviewBox}>
           <View
             style={{
