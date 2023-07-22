@@ -64,6 +64,32 @@ const ProductScreen = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </Text>
+
+        <Text style={styles.heading}>You Might Also Like</Text>
+        <View style={{ textAlign: "center" }}>
+          <CarouselComponent/>
+        </View>
+
+        <Text style={styles.heading}>Similar Items to {"Book"}</Text>
+        <View>
+          <View style={styles.row}>
+            <ProductItem></ProductItem>
+            <ProductItem></ProductItem>
+          </View>
+          <View style={styles.row}>
+            <ProductItem></ProductItem>
+            <ProductItem></ProductItem>
+          </View>
+          <View style={styles.row}>
+            <ProductItem></ProductItem>
+            <ProductItem></ProductItem>
+          </View>
+          <View style={styles.row}>
+            <ProductItem></ProductItem>
+            <ProductItem></ProductItem>
+          </View>
+        </View>
+
         <View style={styles.reviewBox}>
           <View
             style={{
