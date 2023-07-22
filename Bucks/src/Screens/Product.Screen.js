@@ -14,10 +14,9 @@ const ProductScreen = ({route,navigation}) => {
     Ionicons.loadFont();
     FontAwesome.loadFont();
     AntDesign.loadFont();
-    const {productId}=route.params
   }, []);
-
-  const { isLoading, error, data } = useQuery(["posts"], () => {
+  const {productId}=route?.params
+  const { isLoading, error, data } = useQuery(["product",productId], () => {
     return ProductInfo(productId)
   });
   if(isLoading){
@@ -51,16 +50,16 @@ const ProductScreen = ({route,navigation}) => {
             style={styles.productName}
             numberOfLines={2}
             adjustsFontSizeToFit
-            >{data["Product"]["title"]}</Text>
+            >{data?.["Product"]["title"]}</Text>
           <Text style={styles.companyName}>By- Corporation</Text>
           <TouchableOpacity>
           <View style={styles.row}>
             <Octicons name="graph" size={24} color="black" />
-            <Text style={{marginLeft:4}}>{data["Product"]["salesrank"]}</Text>
+            <Text style={{marginLeft:4}}>{data?.["Product"]["salesrank"]}</Text>
           </View>
           </TouchableOpacity>
         </View>
-        <Text style= {styles.descText}>ASIN: {data["Product"]["ASIN"]}</Text>
+        <Text style= {styles.descText}>ASIN: {data?.["Product"]["ASIN"]}</Text>
         <Text style={[styles.heading,{marginTop:-12}]}>Description</Text>
 
         <Text style={styles.descText}>
