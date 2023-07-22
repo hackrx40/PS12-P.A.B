@@ -23,7 +23,7 @@ async def root():
     res=[]
     for prod in products:
         res.append(transformData(prod))
-    return {"Products":res}
+    return {"Products":res[:50]}
 
 """Get by Group"""
 @app.get("/products/{group}")

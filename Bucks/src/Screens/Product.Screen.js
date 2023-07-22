@@ -9,13 +9,13 @@ import ProductItem from '../Components/Cards/ProductItem';
 import CarouselComponent from "../Components/Cards/Carousel"
 import ProductInfo from "../Services/ProductInfo"
 
-const ProductScreen = () => {
+const ProductScreen = ({route,navigation}) => {
   useEffect(() => {
     Ionicons.loadFont();
     FontAwesome.loadFont();
     AntDesign.loadFont();
   }, []);
-  const productId = 46;
+  const {productId}=route.params
   const { isLoading, error, data } = useQuery(["posts"], () => {
     return ProductInfo(productId)
   });
@@ -74,7 +74,10 @@ const ProductScreen = () => {
 
         <Text style={styles.heading}>You Might Also Like</Text>
         <View style={{ textAlign: "center",paddingVertical:16, }}>
-          <CarouselComponent recommendations={data["recommendations"]}/>
+          <CarouselComponent
+          recommendations={data["recommendations"]}
+          navigation={navigation}
+          />
         </View>
 
         <Text style={styles.heading}>Similar Items to {"Book"}</Text>

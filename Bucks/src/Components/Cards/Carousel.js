@@ -1,11 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, FlatList } from "react-native";
+import { View, Text, StyleSheet, Image, FlatList,TouchableOpacity} from "react-native";
 
 
-const CarouselItem = ({ item }) => {
+const CarouselItem = ({ item,navigation }) => {
   console.log(item)
   return (
-    <View style={styles.itemContainer}>
+    <TouchableOpacity
+      style={styles.itemContainer}
+      onPressOut={()=>navigation.goBack()}
+    >
       <Image
         source={require("../../../assets/books.jpg")}
         style={styles.itemImage}
@@ -15,18 +18,18 @@ const CarouselItem = ({ item }) => {
         <Text style={styles.itemRating}>Avg Rating: {item.AvgRating}</Text>
         <Text style={styles.totalReviews}>Reviews: {item.TotalReviews}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
-const ProductCarousel = ({ recommendations }) => {
+const ProductCarousel = ({ navigation,recommendations }) => {
   return (
     <FlatList
       data={recommendations}
       horizontal
       showsHorizontalScrollIndicator={false}
       keyExtractor={(item) => item.ASIN}
-      renderItem={({ item }) => <CarouselItem item={item} key={item.ASIN} />}
+      renderItem={({ item }) => <CarouselItem item={item} key={item.ASIN} navigation={navigation} />}
       contentContainerStyle={styles.container}
     />
   );
