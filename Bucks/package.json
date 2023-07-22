@@ -26,7 +26,8 @@
     "react-native-screens": "~3.20.0",
     "react-native-search-bar": "^3.5.1",
     "react-native-snap-carousel": "^3.9.1",
-    "react-native-svg": "^13.10.0"
+    "react-native-svg": "^13.10.0",
+    "react-query": "^3.39.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

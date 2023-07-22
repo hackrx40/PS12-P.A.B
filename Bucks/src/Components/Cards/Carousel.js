@@ -3,27 +3,14 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import Icon from "react-native-vector-icons/FontAwesome";
 import sampleData from "../../../assets/sampleData.json";
+import {useQuery} from "@tanstack/react-query"
+import axios from "axios";
 
-const CarouselComponent = ({productId}) => {
+const CarouselComponent = (data) => {
   const carouselRef = useRef(null);
-  //const data = JSON.parse(sampleData.Result.replace(/'/g, '"'));
-  const { isLoading, error, data } = useQuery(["posts"], async () => {
-    const response = await axios.get(`http://127.0.0.1:8000/${productId}`);
-    return response.data;
-  });
-  if(isLoading){
-    return(
-      <Text>Loading</Text>
-    )
-  }
-  if(error){
-    return(
-      <Text>Error</Text>
-    )
-  }
   const [activeSlide, setActiveSlide] = useState(0);
-
   const renderItem = ({ item }) => {
+    console.log(item)
     const titleLimit = 15; // Specify the maximum number of characters for the title
 
     let truncatedTitle = item.Title;

@@ -37,7 +37,7 @@ const ProductScreen = () => {
       //resetScrollToCoords={{ x: 0, y: 0 }}
       scrollEnabled={true}
     >
-      <SafeAreaView style={{}}>
+      <View>
         <StatusBar />
         <View style={styles.topSection}>
           <TouchableOpacity style={styles.backButton}>
@@ -63,7 +63,7 @@ const ProductScreen = () => {
           </TouchableOpacity>
         </View>
         <Text style= {styles.descText}>ASIN: {data["Product"]["ASIN"]}</Text>
-        <Text style={styles.heading}>Description</Text>
+        <Text style={[styles.heading,{marginTop:-12}]}>Description</Text>
 
         <Text style={styles.descText}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -77,8 +77,9 @@ const ProductScreen = () => {
 
         <Text style={styles.heading}>You Might Also Like</Text>
         <View style={{ textAlign: "center",paddingVertical:16, }}>
-          {/*For recommendations*/}
+          {/*
           <CarouselComponent productId={data["Product"]["Id"]}/>
+          For recommendations*/}
         </View>
 
         <Text style={styles.heading}>Similar Items to {"Book"}</Text>
@@ -182,37 +183,9 @@ const ProductScreen = () => {
             >
               Total: 4
             </Text>
-
           </View>
         </View>
-        <Text style={styles.heading}>You Might Also Like</Text>
-        <View style={{ textAlign: "center" }}>
-          <View>
-
-          </View>
-        </View>
-        <Text style={styles.heading}>Similar Items to {"Book"}</Text>
-        <View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-          <View style={styles.row}>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-          </View>
-        </View>
-
-
-      </SafeAreaView>
+      </View>
     </KeyboardAwareScrollView>
   );
 
