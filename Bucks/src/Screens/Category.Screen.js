@@ -28,7 +28,11 @@ const CategoryScreen = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.categoryHolder}>
-          <Image style={styles.backgroundImage} /> 
+          <Image 
+            style={styles.backgroundImage} 
+            source={require("../../assets/book.jpeg")} 
+            resizeMode="cover"
+          /> 
           <Text style={styles.categoryName}>Books</Text>
         </View>
         <View style={styles.listHeading}>
