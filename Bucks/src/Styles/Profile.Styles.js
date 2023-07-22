@@ -11,15 +11,17 @@ const styles = StyleSheet.create({
     marginBottom:16,
   },
   heading:{
-    fontSize:24,
+    fontSize:32,
     fontWeight:"600",
     textAlign:"center",
+    top:40,
+    left:10
   },
   dataContainer:{
     flexDirection:"row",
     justifyContent:"space-evenly",
     alignItems:"center",
-    paddingHorizontal:10,
+    paddingHorizontal:5,
     marginVertical:80,
   },
   imageStyle:{
@@ -39,21 +41,28 @@ const styles = StyleSheet.create({
   },
   accountOverview:{
     width:width,
-    backgroundColor:"lightgrey",
+    backgroundColor:"#1E4BA3",
     borderTopStartRadius:48,
     borderTopEndRadius:48,
   },
   overviewHeading:{
-    marginTop:20,
+    marginTop:10,
     marginLeft:20,
     fontSize:20,
-    fontWeight:"600",
+    fontWeight:"700",
+    color:'white',
+    bottom:5,
+    left:70,
+    textDecorationLine:true,
+    fontSize:24
+   
   },
   optionRow:{
     flexDirection:"row",
     paddingHorizontal:24,
     justifyContent:"space-between",
     paddingVertical:16,
+    
   },
   rowLeftGroup:{
     flexDirection:"row",
@@ -61,10 +70,15 @@ const styles = StyleSheet.create({
     alignItems:"center",
   },
   text:{
-    fontSize:20,
+    fontSize:18,
     fontWeight:"600",
     marginLeft:16,
-  }
+    color:'white'
+  },
+  row: {
+    flexDirection: 'row',
+    top:20,
+  },
 })
 
 

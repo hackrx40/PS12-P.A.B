@@ -37,12 +37,7 @@ const HomeScreen = () => {
           <Text style={styles.salutation}>Good Morning Bajaj</Text>
           <View style={styles.rightGroup}>
             <TouchableOpacity>
-              <AntDesign
-                name="Heart"
-                size={24}
-                color="#1E4BA3"
-                style={{ marginRight: 16 }}
-              />
+              <AntDesign name="hearto" size={24} color="#1E4BA3" />
             </TouchableOpacity>
             <TouchableOpacity>
               <FontAwesome name="bell" size={24} color="#1E4BA3" />
@@ -52,15 +47,16 @@ const HomeScreen = () => {
         {/* <HomeSearch/> */}
         <SearchBar />
         <View style={styles.optionContainer}>
-          <HomeOption />
+          <HomeOption/>
           <HomeOption />
           <HomeOption />
         </View>
         <View style={styles.optionContainer}>
-          <HomeOption />
+          <HomeOption/>
           <HomeOption />
           <HomeOption />
         </View>
+      
         <View style={styles.topContainer}>
           <Text style={styles.heading}>Discover Top Categories</Text>
           <TouchableOpacity>

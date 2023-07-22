@@ -32,12 +32,17 @@ const ProductItem = () => {
         />
         <Text style={styles.header}>{limitedTitle}</Text>
         {/* <Text style={styles.body}>{productItem.Group}</Text> */}
+        <View style={styles.row}>
         <View style={styles.starsContainer}>
           <MaterialIcons name="star" size={18} color="gold" />
           <Text style={styles.starsText}> ₹ 999</Text>
         </View>
-      </TouchableOpacity>
-    </View>
+        
+        </View>
+        </TouchableOpacity>
+      </View>
+      
+  
   );
 };
 
@@ -72,7 +77,9 @@ const styles = StyleSheet.create({
   starsText: {
     fontSize: 12,
     marginLeft: 10,
+   
   },
+  
 });
 
 export default ProductItem;

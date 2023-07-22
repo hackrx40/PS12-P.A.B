@@ -42,8 +42,14 @@ const styles = StyleSheet.create({
     top:20,
   },
   backgroundImage:{
-    
-    
+    alignItems:"center",
+    alignSelf:"center",
+    height:160,
+    width:100,
+    top:"6%",
+    zIndex:500,
+    position:"absolute",
+
   },
   container: {
     flex: 1,
@@ -62,8 +68,7 @@ const styles = StyleSheet.create({
     fontWeight:"600",
     fontStyle:"italic",
     textAlign:"center",
-    
-    top:"70%",
+    top:"75%",
   },
   listHeading:{
     marginTop:0,

@@ -39,12 +39,33 @@ const ProfileScreen = () => {
             <Text style={styles.email}>+91 9026971112</Text>
           </View>
         </View>
+        <Text style={{bottom:60, left:20, fontSize:16,textDecorationLine:true}}>Top Interests:</Text>
+        <View>
+            <TouchableOpacity style={{
+              flex:1,
+              justifyContent:'center',
+              alignItems:'center',
+              borderColor:'#1E4BA3',
+              borderWidth:2,
+              backgroundColor:'white',
+              height:40,
+              width:80,
+              borderRadius:5,
+              bottom:55,
+              left:40,
+              margin:5
+            }}><Text style={{fontSize:16}}>Books</Text>
+            </TouchableOpacity>
+           
+            
+          </View>
+          
         <View style={styles.accountOverview}>
           <Text style={styles.overviewHeading}>Account OverView</Text>
-          <OverViewRow logo="Home" text="My Profile"/>
-          <OverViewRow logo="Home" text="My Orders"/>
-          <OverViewRow logo="Home" text="Refund"/>
-          <OverViewRow logo="Home" text="Change Password"/>
+          <OverViewRow name="home" text="My Profile"/>
+          <OverViewRow name= "package" text="My Orders"/>
+          <OverViewRow name= "dollar-sign" text="Refund"/>
+          <OverViewRow name="key" text="Change Password"/>
         </View>
       </SafeAreaView>
     </KeyboardAwareScrollView>
@@ -53,16 +74,19 @@ const ProfileScreen = () => {
 
 export default ProfileScreen
 
-
-
-function OverViewRow({logo,text}){
+function OverViewRow({name,text}){
   return(
     <View style={styles.optionRow}>
       <View style={styles.rowLeftGroup}>
-        <Feather name="user" size={48} color="black" />
+        <Feather name={name} size={48} color="white" />
         <Text style={styles.text}>{text}</Text>
       </View>
-      <AntDesign name="right" size={40} color="black" />
+      <AntDesign name="right" size={32} color="white" />
     </View>
+    
+
+    
+    
   )
+  
 }
