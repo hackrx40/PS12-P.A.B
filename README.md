@@ -20,7 +20,7 @@ To help scale businesses to their full potential and reach the right customers a
 
 ## How it works
 
-We leveraged the power of graph ML and implemented a robust backend architecture that is able to run on regular mobile apps making it feasible to implement into businesses. 
+We leveraged the power of graph ML and implemented a robust backend architecture that is able to run on regular mobile apps making it feasible to implement into businesses.
 
 
 ## How we built it 🔧
@@ -28,7 +28,11 @@ We leveraged the power of graph ML and implemented a robust backend architecture
 
 
 
-## What it does 🧭
+## File structure
+1. Machine Learning - Python files
+2. React Native App
+3. A reccomendation API service
+4. Gephi Files + Report
 
 
 ## How is our solution different? 
@@ -54,8 +58,8 @@ The unique combination of these features empowers our solution to deliver next-g
 
 ### 1. The moblie application 
 
-## How the App Looks 🤜🔥🤛
-
+## Gephi visualization
+<img width="1470" alt="Screenshot 2023-07-22 at 9 58 16 AM" src="https://github.com/hackrx40/PS12-P.A.B/assets/75015574/94a50abd-8282-4130-abfc-760bcb10a390">
 
 
 ## Tech Stack 🔨
@@ -68,7 +72,8 @@ The unique combination of these features empowers our solution to deliver next-g
 7. Expo
 8. RESTAPI
 9. Figma
-10. Dataset used - SNAP amazon co- purchasing (https://snap.stanford.edu/data/amazon0601.html)
+10. Docker
+11. Dataset used - SNAP amazon co- purchasing (https://snap.stanford.edu/data/amazon0601.html)
 
 ## Challenges we ran into but overcame! 🏃‍♂️
 
@@ -81,6 +86,7 @@ The unique combination of these features empowers our solution to deliver next-g
 2. An end- to - end integrated full stack app
 3. An ML based reccomendation system
 4. Personalization of reccomendations
+
 
 ## What we learned 🧠
 1. JanusGraph
