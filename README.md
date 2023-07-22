@@ -88,10 +88,6 @@ The unique combination of these features empowers our solution to deliver next-g
 4. Personalization of reccomendations
 
 
-## What we learned 🧠
-1. JanusGraph
-2. Very cool Graph ML
-
 ## What's next ⏭
 1. Additional Data Sources: Incorporate diverse data sources (e.g., customer demographics, social media, product reviews) for a comprehensive understanding of user preferences, improving recommendation accuracy and relevance.
 
