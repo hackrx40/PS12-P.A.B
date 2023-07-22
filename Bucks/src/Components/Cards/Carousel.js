@@ -1,82 +1,43 @@
-import React, { useRef, useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
-import Carousel, { Pagination } from "react-native-snap-carousel";
-import Icon from "react-native-vector-icons/FontAwesome";
-import sampleData from "../../../assets/sampleData.json";
-import {useQuery} from "@tanstack/react-query"
-import axios from "axios";
+import React from "react";
+import { View, Text, StyleSheet, Image, FlatList } from "react-native";
 
-const CarouselComponent = (data) => {
-  const carouselRef = useRef(null);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const renderItem = ({ item }) => {
-    console.log(item)
-    const titleLimit = 15; // Specify the maximum number of characters for the title
 
-    let truncatedTitle = item.Title;
-    if (item.Title.length > titleLimit) {
-      truncatedTitle = item.Title.substring(0, titleLimit) + "...";
-    }
-
-    return (
-      <View style={styles.itemContainer}>
-        <Image
-          source={require("../../../assets/books.jpg")} // Use the same image for all items (replace with actual image path if needed)
-          style={styles.itemImage}
-        />
-        <Text style={styles.itemTitle}>{truncatedTitle}</Text>
-        <View style={styles.ratingContainer}>
-          <Icon name="star" size={15} color="gold" style={styles.starIcon} />
-          <Text style={styles.itemRating}>{item.AvgRating}</Text>
-          <Text style={styles.totalReviews}>{item.TotalReviews} reviews</Text>
-        </View>
-      </View>
-    );
-  };
-
-  const onPrevious = () => {
-    carouselRef.current.snapToPrev();
-  };
-
-  const onNext = () => {
-    carouselRef.current.snapToNext();
-  };
-
+const CarouselItem = ({ item }) => {
+  console.log(item)
   return (
-    <View style={styles.container}>
-      <Carousel
-        ref={carouselRef}
-        data={data}
-        renderItem={renderItem}
-        sliderWidth={400} // Adjust the slider width as needed
-        itemWidth={200} // Adjust the item width as needed
-        loop
-        // enableSnap
-        onSnapToItem={(index) => setActiveSlide(index)}
+    <View style={styles.itemContainer}>
+      <Image
+        source={require("../../../assets/books.jpg")}
+        style={styles.itemImage}
       />
-      <View style={styles.arrowButtonContainer}>
-        <TouchableOpacity style={styles.arrowButton} onPress={onPrevious}>
-          <Icon name="chevron-left" size={20} color="black" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.arrowButton} onPress={onNext}>
-          <Icon name="chevron-right" size={20} color="black" />
-        </TouchableOpacity>
+      <Text style={styles.itemTitle}>{item.Title}</Text>
+      <View style={styles.ratingContainer}>
+        <Text style={styles.itemRating}>Avg Rating: {item.AvgRating}</Text>
+        <Text style={styles.totalReviews}>Reviews: {item.TotalReviews}</Text>
       </View>
     </View>
   );
 };
 
-export default CarouselComponent
+const ProductCarousel = ({ recommendations }) => {
+  return (
+    <FlatList
+      data={recommendations}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      keyExtractor={(item) => item.ASIN}
+      renderItem={({ item }) => <CarouselItem item={item} key={item.ASIN} />}
+      contentContainerStyle={styles.container}
+    />
+  );
+};
+
+export default ProductCarousel;
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    paddingVertical: 20,
+    paddingHorizontal: 10,
     backgroundColor: "#f5f5f5",
   },
   itemImage: {
@@ -91,19 +52,19 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
+    marginHorizontal: 10,
+    padding: 10,
   },
   itemTitle: {
     fontSize: 16,
     fontWeight: "bold",
     marginTop: 10,
+    textAlign: "center",
   },
   ratingContainer: {
     flexDirection: "row",
     alignItems: "center",
     marginTop: 5,
-  },
-  starIcon: {
-    marginRight: 2,
   },
   itemRating: {
     fontSize: 14,
@@ -116,17 +77,4 @@ const styles = StyleSheet.create({
     color: "gray",
     marginLeft: 5,
   },
-  arrowButtonContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    position: "absolute",
-    top: "12%",
-    left: 1,
-    right: 0,
-  },
-  arrowButton: {
-    paddingHorizontal: 0,
-    paddingVertical: 1,
-  },
 });
-

@@ -3,13 +3,11 @@ import React,{useEffect} from 'react'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { FontAwesome ,Ionicons,AntDesign, Octicons} from '@expo/vector-icons';
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import styles from '../Styles/Product.Styles'
 import Star from '../Components/star';
 import ProductItem from '../Components/Cards/ProductItem';
-import LongItem from '../Components/Cards/LongItem';
 import CarouselComponent from "../Components/Cards/Carousel"
-
+import ProductInfo from "../Services/ProductInfo"
 
 const ProductScreen = () => {
   useEffect(() => {
@@ -18,9 +16,8 @@ const ProductScreen = () => {
     AntDesign.loadFont();
   }, []);
   const productId = 46;
-  const { isLoading, error, data } = useQuery(["posts"], async () => {
-    const response = await axios.get(`http://127.0.0.1:8000/${productId}`);
-    return response.data;
+  const { isLoading, error, data } = useQuery(["posts"], () => {
+    return ProductInfo(productId)
   });
   if(isLoading){
     return(
@@ -32,9 +29,9 @@ const ProductScreen = () => {
       <Text>Error</Text>
     )
   }
+  console.log(data["recommendations"])
   return (
     <KeyboardAwareScrollView
-      //resetScrollToCoords={{ x: 0, y: 0 }}
       scrollEnabled={true}
     >
       <View>
@@ -77,9 +74,7 @@ const ProductScreen = () => {
 
         <Text style={styles.heading}>You Might Also Like</Text>
         <View style={{ textAlign: "center",paddingVertical:16, }}>
-          {/*
-          <CarouselComponent productId={data["Product"]["Id"]}/>
-          For recommendations*/}
+          <CarouselComponent recommendations={data["recommendations"]}/>
         </View>
 
         <Text style={styles.heading}>Similar Items to {"Book"}</Text>
