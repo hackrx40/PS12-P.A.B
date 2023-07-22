@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, Text, View,StatusBar, SafeAreaView, TouchableOpacity, Touchable,ActivityIndicator } from 'react-native'
 import React,{useEffect} from 'react'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { FontAwesome ,Ionicons,AntDesign} from '@expo/vector-icons';
+import { FontAwesome ,Ionicons,AntDesign, Octicons} from '@expo/vector-icons';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import styles from '../Styles/Product.Styles'
@@ -24,20 +24,10 @@ const ProductScreen = () => {
     return response.data;
   });
 
-  if (isLoading) {
-    return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="blue" />
-      </View>
-    );
-  }
-  if (error) {
-    return (
-      <View style={styles.errorContainer}>
-        <Text>Error: {String(error)}</Text>
-      </View>
-    );
-  }
+
+  
+
+
   return (
     <KeyboardAwareScrollView
       resetScrollToCoords={{ x: 0, y: 0 }}
@@ -55,15 +45,23 @@ const ProductScreen = () => {
         </View>
         <View style={styles.productTopContainer}>
           <View style={styles.sampleImage}/>
-          <Text style={styles.productName}>{data["Product"]["title"]}</Text>
-          <Text style={styles.companyName}>John Doe Corporation</Text>
+          <Text style={styles.productName}>{["Product"]["title"]}</Text>
+          <Text style={styles.companyName}>Beginning ASP.NET Databases using C#</Text>
           <TouchableOpacity>
-            <FontAwesome name="chart-line" size={24} color="greeb"/>
+          <View style={styles.row}><Octicons name="graph" size={24} color="black" /><Text>  48408</Text></View>
+            
           </TouchableOpacity>
+<<<<<<< HEAD
 
           <Text style={styles.stars}>{"⭐️⭐️⭐️"}</Text>
         </View>
         <Text style= {styles.descText}>ASIN:</Text>
+=======
+            
+          
+        </View>
+        <Text style= {styles.descText}>ASIN: 1861007418</Text> 
+>>>>>>> 039ae5b (prod screen)
         <Text style={styles.heading}>Description</Text>
 
         <Text style={styles.descText}>
@@ -75,6 +73,7 @@ const ProductScreen = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </Text>
+<<<<<<< HEAD
 
         <Text style={styles.heading}>You Might Also Like</Text>
         <View style={{ textAlign: "center" }}>
@@ -101,6 +100,8 @@ const ProductScreen = () => {
           </View>
         </View>
 
+=======
+>>>>>>> 039ae5b (prod screen)
         <View style={styles.reviewBox}>
           <View
             style={{
@@ -114,6 +115,7 @@ const ProductScreen = () => {
               shadowRadius: 2,
               shadowColor: "rgba(193, 211, 251, 0.5)",
               elevation: 5,
+              bottom:5
             }}
           >
             <Text
@@ -159,13 +161,61 @@ const ProductScreen = () => {
                 textAlign: "center",
               }}
             >
-              40 customer ratings
+              Average Rating: 4
             </Text>
+            <Text
+              style={{
+                fontSize: 16,
+                color: "#595B71",
+                textAlign: "center",
+                top:4
+              }}
+            >
+              Downloaded: 4
+            </Text>
+            <Text
+              style={{
+                fontSize: 16,
+                color: "#595B71",
+                textAlign: "center",
+                top:8
+              }}
+            >
+              Total: 4
+            </Text>
+            
           </View>
         </View>
+        <Text style={styles.heading}>You Might Also Like</Text>
+        <View style={{ textAlign: "center" }}>
+          <View>
+           
+          </View>
+        </View>
+        <Text style={styles.heading}>Similar Items to {"Book"}</Text>
+        <View>
+          <View style={styles.row}>
+            <ProductItem></ProductItem>
+            <ProductItem></ProductItem>
+          </View>
+          <View style={styles.row}>
+            <ProductItem></ProductItem>
+            <ProductItem></ProductItem>
+          </View>
+          <View style={styles.row}>
+            <ProductItem></ProductItem>
+            <ProductItem></ProductItem>
+          </View>
+          <View style={styles.row}>
+            <ProductItem></ProductItem>
+            <ProductItem></ProductItem>
+          </View>
+        </View>
+
+       
       </SafeAreaView>
     </KeyboardAwareScrollView>
   );
-};
 
+            }
 export default ProductScreen;
