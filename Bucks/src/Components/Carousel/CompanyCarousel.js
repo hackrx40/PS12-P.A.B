@@ -1,20 +1,29 @@
 import React from 'react';
-import { View, FlatList, Dimensions, StyleSheet } from 'react-native';
+import { View, FlatList, Dimensions, StyleSheet,Image,TouchableOpacity } from 'react-native';
 
 const { width } = Dimensions.get('window');
 const ITEM_WIDTH = width * 0.75;
 const ITEM_MARGIN = (width - ITEM_WIDTH) / 2;
 
 const data = [
-  { id: '1', color: 'red' },
-  { id: '2', color: 'blue' },
-  { id: '3', color: 'green' },
-  { id: '4', color: 'yellow' },
+  { id: '1', image:require("../../../assets/bookb.png"),group:"Book" },
+  { id: '2', image:require("../../../assets/dvdb.png"),group:"Dvd" },
+  { id: '3', image:require("../../../assets/musicb.png"),group:"Music" },
+  { id: '4', image:require("../../../assets/videob.png"),group:"Videos" },
 ];
 
-const SnapCarousel = () => {
+const SnapCarousel = ({navigation}) => {
   const renderItem = ({ item }) => (
-    <View style={[styles.item, { backgroundColor: item.color }]} />
+    <TouchableOpacity
+      style={[styles.item,]}
+      onPress={()=>navigation.navigate("CategoryScreen",{group:item.group})}
+      >
+        <Image
+          source={item.image}
+          resizeMode="cover"
+          style={{height:ITEM_WIDTH*.6,width:ITEM_WIDTH}}
+        />
+    </TouchableOpacity>
   );
 
   return (

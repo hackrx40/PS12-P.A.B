@@ -8,13 +8,8 @@ const sampleData = {
 };
 
 const ProductItem = () => {
-  // Parse the sample data from JSON string to an array of objects
   const data = JSON.parse(sampleData.Result.replace(/'/g, '"'));
-
-  // Get the first item
   const productItem = data[0];
-
-  // Limit the character length of the Title
   const maxTitleLength = 60;
   const limitedTitle =
     productItem.Title.length > maxTitleLength
@@ -31,18 +26,17 @@ const ProductItem = () => {
           style={styles.image}
         />
         <Text style={styles.header}>{limitedTitle}</Text>
-        {/* <Text style={styles.body}>{productItem.Group}</Text> */}
         <View style={styles.row}>
         <View style={styles.starsContainer}>
           <MaterialIcons name="star" size={18} color="gold" />
           <Text style={styles.starsText}> ₹ 999</Text>
         </View>
-        
+
         </View>
         </TouchableOpacity>
       </View>
-      
-  
+
+
   );
 };
 
@@ -77,9 +71,9 @@ const styles = StyleSheet.create({
   starsText: {
     fontSize: 12,
     marginLeft: 10,
-   
+
   },
-  
+
 });
 
 export default ProductItem;
