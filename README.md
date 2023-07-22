@@ -21,6 +21,7 @@ To help scale businesses to their full potential and reach the right customers a
 ## How it works
 
 We leveraged the power of graph ML and implemented a robust backend architecture that is able to run on regular mobile apps making it feasible to implement into businesses.
+We built a backend using janusgraph, gremlin and python and converted it into an API to be able to integrate and push recommendations on our app. 
 
 
 ## How we built it 🔧
