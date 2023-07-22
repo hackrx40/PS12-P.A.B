@@ -1,24 +1,20 @@
 import {
-  ScrollView,
-  StyleSheet,
   Text,
   View,
   StatusBar,
   SafeAreaView,
   TouchableOpacity,
-  Touchable,
 } from "react-native";
 import React, { useEffect } from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { FontAwesome, Ionicons, AntDesign } from "@expo/vector-icons";
 import styles from "../Styles/Home.Styles";
-import HomeSearch from "../Components/Input/HomeSearch";
 import HomeOption from "../Components/Buttons/HomeOptions";
 import SnapCarousel from "../Components/Carousel/CompanyCarousel";
 import ProductItem from "../Components/Cards/ProductItem";
 import SearchBar from "../Components/Buttons/SearchBar";
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   useEffect(() => {
     Ionicons.loadFont();
     FontAwesome.loadFont();
@@ -63,7 +59,7 @@ const HomeScreen = () => {
             <Text style={styles.seeAll}>See All</Text>
           </TouchableOpacity>
         </View>
-        <SnapCarousel />
+        <SnapCarousel navigation={navigation}/>
         <View style={styles.topContainer}>
           <Text style={styles.heading}>Products just for you</Text>
           <TouchableOpacity>

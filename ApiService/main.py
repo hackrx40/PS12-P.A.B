@@ -33,7 +33,7 @@ async def get_products(group: str):
     res=[]
     for prod in products:
         res.append(transformData(prod))
-    return {group: res}
+    return {group: res[:20]}
 
 """Get by Id"""
 @app.get("/{productId}")

@@ -130,7 +130,6 @@ const ProductItem = () => {
       <TouchableOpacity>
         <Image source={imagePaths[randomImageIndex]} style={styles.image} />
         <Text style={styles.header}>{limitedTitle}</Text>
-        {/* <Text style={styles.body}>{productItem.Group}</Text> */}
         <View style={styles.row}>
           <View style={styles.starsContainer}>
             <MaterialIcons name="star" size={18} color="gold" />
