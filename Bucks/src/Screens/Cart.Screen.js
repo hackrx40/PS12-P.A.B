@@ -29,6 +29,7 @@ const CartScreen = () => {
     >
       <SafeAreaView style={{ flex: 1, backgroundColor: "#D3D3D3" }}>
         <StatusBar />
+        <Text style={{fontSize:24,fontWeight:"600",textAlign:"center"}}>Cart</Text>
         <View style={styles.topSection}>
           <TouchableOpacity style={styles.backButton}>
             <Ionicons name="arrow-back-outline" size={24} color="black" />
@@ -62,7 +63,6 @@ const CartScreen = () => {
             >
               Title
             </Text>
-
             <Text
               style={{
                 left: 15,
@@ -90,7 +90,6 @@ const CartScreen = () => {
             <Text style={[styles.total, { color: "orange" }]}>$ 300</Text>
           </View>
         </View>
-        <Text>Affaan Component Goes Here</Text>
         <PaymentButton />
       </SafeAreaView>
     </KeyboardAwareScrollView>

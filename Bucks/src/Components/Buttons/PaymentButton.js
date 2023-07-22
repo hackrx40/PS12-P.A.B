@@ -4,7 +4,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 
 const PaymentButton = ({ onPress }) => {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+    <TouchableOpacity style={{marginTop:12}} onPress={onPress} activeOpacity={0.7}>
       <View style={styles.buttonContainer}>
         <FontAwesome5 name="credit-card" size={24} color="white" />
         <Text style={styles.buttonText}>Make Payment</Text>

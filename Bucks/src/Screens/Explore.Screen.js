@@ -3,9 +3,7 @@ import React,{useEffect} from 'react'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { FontAwesome ,Ionicons,AntDesign} from '@expo/vector-icons';
 import styles from '../Styles/Home.Styles'
-import HomeSearch from "../Components/Input/HomeSearch"
-import HomeOption from "../Components/Buttons/HomeOptions"
-import SnapCarousel from "../Components/Carousel/CompanyCarousel"
+import SearchBar from '../Components/Buttons/SearchBar';
 import ProductItem from '../Components/Cards/ProductItem';
 
 
@@ -24,7 +22,12 @@ const ExploreScreen = () => {
     >
       <SafeAreaView style={{flex:1}}>
         <StatusBar/>
-        <HomeSearch/>
+        <View style={{alignItems:"center",justifyContent:"space-evenly",flexDirection:"row"}}>
+          <SearchBar />
+          <TouchableOpacity>
+            <Ionicons name="options" size={32} color="black" />
+          </TouchableOpacity>
+        </View>
         <View>
           <View style={styles.row}>
             <ProductItem></ProductItem>
